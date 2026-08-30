@@ -153,9 +153,17 @@ python -m pip install -r requirements.txt
 python -m pytest tests/ -q
 ```
 
-The suite is creds-free by construction. Nothing in it reads a database, a network source or an
-environment variable, so it passes on a fresh clone with no configuration. Verified from a clean
-clone; the transcript is in
+The suite is creds-free by construction. A scan of every published `.py` file finds zero references
+to `os.environ`, `getenv`, `requests`, `urlopen`, `httpx`, `supabase` or `psycopg`, so it passes on a
+fresh clone with no configuration.
+
+Two functions in the published code do lazily import the unpublished pipeline, and neither is reached
+by the suite: `simulator/projected_bracket.py:167` imports `db.ko_readiness.resolve_r32`, used only
+once the group stage is mathematically complete, and `scripts/calibration_backtest.py:143` imports the
+database client inside `_load_snapshot`, reached only from that script's `main()`. Both raise
+`ImportError` if called here. They are named rather than left to be discovered.
+
+Verified from a clean clone with a fresh virtual environment; the transcript is in
 [`docs/reproducing_a_published_number.md`](docs/reproducing_a_published_number.md).
 
 To run the publication gate, which is what CI runs first:
@@ -204,9 +212,15 @@ layer; any environment file or credential.
 - **The live pipeline is absent.** Ingestion, reconciliation, publication and the monitors all live in
   a directory that does not publish. You can fit the model, simulate the tournament and reproduce the
   backtests; you cannot reproduce a *live* run end to end.
-- **Five test modules were removed rather than shipped broken.** Four ablation and readings suites
-  need the player model, and one knockout dress-rehearsal suite needs the database layer. Neither
-  publishes, so all five would fail to import on a clean clone. The twelve that remain pass.
+- **Six test modules were removed rather than shipped broken.** Four ablation and readings suites
+  need the player model, one knockout dress-rehearsal suite needs the database layer, and one
+  byte-stability suite loads a generator by path that in turn reads a player-model artifact. None of
+  those publishes, so all six would fail on a clean clone. The eleven that remain pass.
+
+  The sixth is worth naming separately, because it was found late and by a different route. The first
+  five were caught by scanning for `import` statements. That suite has none: it loads its dependency
+  through `importlib.util.spec_from_file_location`, so a dependency expressed as a path was invisible
+  to a scan of imports, and only running the suite from a clean checkout found it.
 - **The quorum logic is not here, and it is the one claim this README cannot evidence.** Two-source
   agreement with disagreements escalated to a human is real and it is tested, with fifteen negative
   controls. It is not published because its import chain reaches a network scraper and the player
@@ -215,6 +229,15 @@ layer; any environment file or credential.
 - **`robots.ts` and `sitemap.ts` are absent.** Both enumerate the routes of two competitions from one
   place, so neither can be published without either including the other workstream or being rewritten
   into a file the private repository does not have.
+
+**Source comments point at files that are not here.** Measured on the published tree: 54 references
+across 28 distinct targets, in comments explaining where a counterpart lives. The largest are
+`docs/phase_2_4_backtest_report.md` (6), `db/enter_result.py` (6) and
+`scripts/gen_locked_pretournament.py` (5). They are left as they are on purpose. Rewriting 54 comments
+would fork this extract from its original in 54 places, and a faithful extract with dead links is more
+useful to an evaluator than an edited one that reads cleanly and no longer matches what runs. Treat any
+path under `db/`, `players/`, `scripts/` other than `scripts/calibration_backtest.py`, `docs/` other
+than the five files here, or `web/test/` as a pointer into the private repository.
 
 One file diverges from its private original, and only one: `web/src/lib/data/events.ts` reads its
 dispatch target from the environment instead of hardcoding a repository path. The reason is in a

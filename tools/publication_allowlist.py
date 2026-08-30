@@ -100,12 +100,21 @@ _DATA: tuple[Rule, ...] = (
 # publishes. A published suite that cannot collect is worse than a smaller one, because the first
 # thing an evaluator does is run it.
 #
-# The four dropped ablation and readings suites, and the knockout dress-rehearsal suite, are not
-# hidden: README.md names them and says which private module each needs.
+# A SIXTH was dropped later, and by a different route worth recording. The dependency scan that found
+# the first five looked for `import` statements. tests/test_locked_pretournament.py has none: it loads
+# scripts/gen_locked_pretournament.py BY PATH through importlib.util.spec_from_file_location, so no
+# scan of imports could see it, and it failed only when the suite was actually run from a clean
+# checkout. Publishing the generator did not fix it either, because the generator reads
+# players/artifacts/player_projections.json, and the player model does not publish.
+#
+# The lesson is narrow and worth keeping: a dependency expressed as a path is invisible to a
+# dependency scan, and the only thing that finds it is running the suite somewhere the file is absent.
+#
+# The six dropped suites are not hidden: README.md names them and says which private module each needs.
 _PUBLISHED_TESTS = (
     "test_backtest.py", "test_backtest_hosts.py", "test_backtest_retro.py",
     "test_calibration_backtest.py", "test_champion_convergence.py", "test_champion_odds.py",
-    "test_dixon_coles.py", "test_elo.py", "test_locked_pretournament.py",
+    "test_dixon_coles.py", "test_elo.py",
     "test_projected_bracket.py", "test_simulator_shell.py", "test_tiebreakers_order.py",
 )
 _TESTS: tuple[Rule, ...] = tuple(

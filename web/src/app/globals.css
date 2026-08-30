@@ -1,0 +1,358 @@
+@import "tailwindcss";
+
+/* Dark mode is driven by a data-theme attribute set before paint (no FOUC),
+   not prefers-color-scheme directly — so the user toggle wins. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---- Light theme (default). Neutrals swap between themes; accents do not. ---- */
+:root {
+  --bg: #ffffff;
+  --bg-subtle: #f8fafc;
+  --surface: #ffffff;
+  --elevated: #f1f5f9;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --fg: #0f172a;
+  --secondary: #475569;
+  --muted: #94a3b8;
+  --inverse: #ffffff;
+
+  /* shared accents (identical in both themes) */
+  --up: #22c55e;        --up-bg: #dcfce7;
+  --down: #ef4444;      --down-bg: #fee2e2;
+  --upset: #f59e0b;     --upset-bg: #fef3c7;
+  --neutral: #94a3b8;
+  --confident: #3b82f6; --confident-hover: #2563eb;
+
+  /* per-round calendar accents, a cool -> warm progression toward the gold Final. Defined ONCE here
+     (theme-independent single hues; dark/midnight inherit them). NEVER the up/down win/loss hues.
+     round_of_32 reuses --confident, third_place reuses --upset, final reuses --gold; these four are
+     the new ones. The Stage -> token mapping lives in lib/calendar (STAGE_COLOR). */
+  --slate: #64748b;     /* group stage */
+  --teal: #2dd4bf;      /* round of 16 */
+  --violet: #a78bfa;    /* quarter-finals */
+  --rose: #fb7185;      /* semi-finals */
+
+  /* tournament accents: host nations + the gold family for title/champion moments.
+     Light = editorial: gold reads as a restrained warm metal, no glow. */
+  --host-mx: #22c55e;   --host-us: #3b82f6;   --host-ca: #ef4444;
+  --gold: #eab308;          /* base gold (accent, identical role both themes) */
+  --gold-strong: #a16207;   /* deep gold — readable as text on a light gold wash */
+  --gold-soft: #fef9c3;     /* pale gold wash (champion background) */
+  --gold-line: #fde68a;     /* gold hairline / ring */
+  /* podium siblings of gold for the group rank badges: silver = cool metallic grey, bronze =
+     warm brown. Light = restrained metals: base for the /15 wash, -strong for readable text. */
+  --silver: #94a3b8;        /* base silver (cool metallic grey) */
+  --silver-strong: #475569; /* deep slate silver, readable as text on a light silver wash */
+  --bronze: #b45309;        /* base bronze (warm brown) */
+  --bronze-strong: #92400e; /* deep bronze, readable as text on a light bronze wash */
+  /* faint podium BORDER tokens for the golden-boot top-three rows: the medal hue at low alpha so the
+     ring reads as a subtle frame, never a loud outline. Light = a touch firmer so it stays visible on
+     the pale surface. */
+  --medal-gold-border: rgba(234, 179, 8, 0.45);
+  --medal-silver-border: rgba(148, 163, 184, 0.45);
+  --medal-bronze-border: rgba(180, 83, 9, 0.45);
+  --champion-ring: rgba(234, 179, 8, 0.35);
+  --champion-glow: 0 0 0 0 transparent;   /* no glow in editorial light */
+
+  /* ---- FIXED illustration / medal / on-gold palette (T3): theme-INDEPENDENT literals, defined ONCE
+     here so components carry NO raw hex. These deliberately do NOT track the themed --gold/--silver/
+     --bronze (which shift between light and dark); each is a fixed value that must render identically
+     in EVERY theme -- a gold-metal gradient, the celebration confetti, the fixed medal metals, and the
+     dark navy painted ON a gold fill. Adding them changes NO pixel: each equals the literal the
+     component used before. ---- */
+  --metal-gold: #eab308;         /* fixed metallic gold (CountdownHero gold-gradient stops) */
+  --metal-gold-deep: #a16207;    /* deepest gold-gradient stop */
+  --metal-gold-light: #fcd34d;   /* lightest gold-gradient stop */
+  --on-gold: #0a0f1e;            /* fixed dark-navy foreground ON a gold fill (never the themed --bg) */
+  --medal-gold-solid: #eab308;   /* rank-1 badge solid (fixed metal, not the themed --gold) */
+  --medal-gold-fg: #3b2c00;      /* rank-1 badge foreground */
+  --medal-silver-solid: #b8c1cf; /* rank-2 badge solid */
+  --medal-silver-fg: #1f2937;    /* rank-2 badge foreground */
+  --medal-bronze-solid: #c67c41; /* rank-3 badge solid */
+  --medal-bronze-fg: #2a1505;    /* rank-3 badge foreground */
+  --medal-silver-accent: #9ca3af;/* rank-2 accent border/bg (home Leaderboard + ForecastChart) */
+  --medal-bronze-accent: #cd7f32;/* rank-3 accent border/bg (home Leaderboard + ForecastChart) */
+
+  --shadow-card: 0 4px 12px -2px rgb(0 0 0 / 0.08);
+}
+
+[data-theme="dark"] {
+  --bg: #0a0f1e;
+  --bg-subtle: #0f172a;
+  --surface: #111827;
+  --elevated: #1e293b;
+  --border: #1e293b;
+  --border-strong: #334155;
+  --fg: #f8fafc;
+  --secondary: #cbd5e1;
+  --muted: #64748b;
+  --inverse: #0f172a;
+
+  --up-bg: #052e16;
+  --down-bg: #450a0a;
+  --upset-bg: #451a03;
+  --neutral: #64748b;
+
+  /* Dark = broadcast/energetic: gold runs brighter and carries a real glow. */
+  --gold: #fbbf24;
+  --gold-strong: #fcd34d;
+  --gold-soft: #221a06;
+  --gold-line: #92400e;
+  /* podium siblings run brighter on dark so the -strong text stays legible on the /15 wash */
+  --silver: #cbd5e1;
+  --silver-strong: #e2e8f0;
+  --bronze: #d97706;
+  --bronze-strong: #fbbf6b;
+  /* faint podium BORDER tokens (dark): the brighter medal hues at low alpha for a subtle frame. */
+  --medal-gold-border: rgba(251, 191, 36, 0.38);
+  --medal-silver-border: rgba(203, 213, 225, 0.32);
+  --medal-bronze-border: rgba(217, 119, 6, 0.38);
+  --champion-ring: rgba(251, 191, 36, 0.45);
+  --champion-glow: 0 0 55px -12px rgba(251, 191, 36, 0.55);
+
+  --shadow-card: 0 4px 12px -2px rgb(0 0 0 / 0.4);
+}
+
+/* ---- Midnight theme (true black). A SIBLING of dark, opted into explicitly via
+   data-theme="midnight" (never from prefers-color-scheme). Same structure as dark, but the
+   neutrals are pure-black -> near-black GREYS with no blue cast; every key dark defines is
+   re-mapped here so nothing falls back to a navy value. The gold family + shared accents keep
+   dark's hues (brand consistency) and pop harder on true black. ---- */
+[data-theme="midnight"] {
+  --bg: #000000;            /* true black base */
+  --bg-subtle: #0a0a0a;
+  --surface: #0c0c0c;       /* a hair above black so cards read against the page */
+  --elevated: #161616;
+  --border: #242424;
+  --border-strong: #383838;
+  --fg: #f5f5f5;            /* neutral near-white, AA on black */
+  --secondary: #c4c4c4;     /* ~12:1 on black */
+  --muted: #707070;         /* dimmed label grey */
+  --inverse: #000000;       /* text on a gold/accent fill */
+
+  --up-bg: #052e16;
+  --down-bg: #450a0a;
+  --upset-bg: #451a03;
+  --neutral: #6b6b6b;
+
+  /* gold + glow carried over from dark, unchanged hue — reads brighter on true black */
+  --gold: #fbbf24;
+  --gold-strong: #fcd34d;
+  --gold-soft: #221a06;
+  --gold-line: #92400e;
+  /* podium siblings carried over from dark, unchanged hue; pop harder on true black */
+  --silver: #cbd5e1;
+  --silver-strong: #e2e8f0;
+  --bronze: #d97706;
+  --bronze-strong: #fbbf6b;
+  /* faint podium BORDER tokens (midnight): carried from dark, low alpha for a subtle frame. */
+  --medal-gold-border: rgba(251, 191, 36, 0.38);
+  --medal-silver-border: rgba(203, 213, 225, 0.32);
+  --medal-bronze-border: rgba(217, 119, 6, 0.38);
+  --champion-ring: rgba(251, 191, 36, 0.45);
+  --champion-glow: 0 0 55px -12px rgba(251, 191, 36, 0.55);
+
+  --shadow-card: 0 4px 14px -2px rgb(0 0 0 / 0.6);
+}
+
+/* ---- Expose tokens as Tailwind utilities (bg-surface, text-fg, border-border, ...) ---- */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-inverse: var(--inverse);
+
+  --color-up: var(--up);
+  --color-up-bg: var(--up-bg);
+  --color-down: var(--down);
+  --color-down-bg: var(--down-bg);
+  --color-upset: var(--upset);
+  --color-upset-bg: var(--upset-bg);
+  --color-neutral: var(--neutral);
+  --color-confident: var(--confident);
+  --color-slate: var(--slate);
+  --color-teal: var(--teal);
+  --color-violet: var(--violet);
+  --color-rose: var(--rose);
+  --color-on-gold: var(--on-gold);
+  --color-gold: var(--gold);
+  --color-gold-strong: var(--gold-strong);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-line: var(--gold-line);
+  --color-silver: var(--silver);
+  --color-silver-strong: var(--silver-strong);
+  --color-bronze: var(--bronze);
+  --color-bronze-strong: var(--bronze-strong);
+  --color-medal-gold-border: var(--medal-gold-border);
+  --color-medal-silver-border: var(--medal-silver-border);
+  --color-medal-bronze-border: var(--medal-bronze-border);
+  --color-host-mx: var(--host-mx);
+  --color-host-us: var(--host-us);
+  --color-host-ca: var(--host-ca);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-card: 12px;
+}
+
+html { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+[data-theme="midnight"] { color-scheme: dark; }
+
+/* Sticky header is h-14 (3.5rem); offset in-page anchors / scrolled section headers so they
+   don't tuck underneath it. */
+html { scroll-padding-top: 4.5rem; }
+:where(h1, h2, h3, [id]) { scroll-margin-top: 4.5rem; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* tabular figures for probability numbers / timestamps */
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* ---- Skeleton placeholder (route loading.tsx shells) ----
+   A token-driven block (bg-elevated). Under motion-safe it gets a soft sweep keyed off --fg, so
+   it reads correctly on light, dark, and midnight alike. Reduced-motion users get a still block
+   (the ::after sweep is only defined inside the no-preference query). */
+.skeleton { position: relative; overflow: hidden; background: var(--elevated); }
+@media (prefers-reduced-motion: no-preference) {
+  .skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--fg) 9%, transparent),
+      transparent
+    );
+    animation: skeleton-shimmer 1.5s infinite;
+  }
+}
+@keyframes skeleton-shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* ---- Champion hero surface: warm gold wash (light) / gold wash + glow (dark) ----
+   Driven by the gold-family tokens so it stays correct in both themes. */
+.champion-surface {
+  background:
+    radial-gradient(125% 150% at 0% 0%, var(--gold-soft) 0%, transparent 58%),
+    linear-gradient(135deg, var(--surface), var(--elevated));
+  border-color: var(--champion-ring);
+  box-shadow: var(--shadow-card), var(--champion-glow);
+}
+
+/* Crowned-gold ring behind the champion flag.
+   The ring is a 3px gold box-shadow on the element's border box. At the WRAPPER
+   sites (a span around <Flag>) the wrapper is a block/inline-block box whose
+   height is driven by its line box (line-height 24px) rather than the flag's
+   real height, so the border box was ~4px taller than the 4:3 flag -> the gold
+   ring framed a letterbox gap above (and below) the flag. inline-flex sizes the
+   wrapper to the flag with no baseline descender, and line-height:0 collapses the
+   line box, so the ring's box hugs the flag edge-to-edge. The DIRECT-on-flag
+   sites (the class on the sized flag span itself) and the circular share-modal
+   crop (rounded-full inline-flex) are unaffected. */
+.champion-flag-ring {
+  display: inline-flex;
+  line-height: 0;
+  box-shadow: 0 0 0 3px var(--gold-line), var(--champion-glow);
+}
+
+/* Deep-link affordance for a linkable nation flag. The shared Flag component wraps a linkable
+   WC2026 nation in a Link.flag-link to that nation's /teams/[slug] profile; this class is what makes
+   that link DISCOVERABLE. cursor:pointer signals it is clickable, and hover/keyboard-focus paint a
+   subtle confident-accent ring. The ring is a box-shadow ONLY (never width/border/margin) so it can
+   never reflow the row - zero-CLS - and it hugs the flag's own rounded-[2px] corners. The transition
+   is disabled under prefers-reduced-motion. This is the ONE canonical flag-link affordance; every
+   linked flag site-wide inherits it, so a flag reads the same "tap me for the team page" everywhere. */
+.flag-link {
+  cursor: pointer;
+  border-radius: 2px;
+  transition: box-shadow 120ms ease;
+}
+.flag-link:hover {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--confident) 60%, transparent);
+}
+.flag-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--confident);
+}
+@media (prefers-reduced-motion: reduce) {
+  .flag-link { transition: none; }
+}
+
+/* ---- Champion celebration: looping gold confetti + ribbon fall behind the hero content ----
+   Contained by the card's overflow-hidden; pointer-events:none; sits below the content layer.
+   Motion is gated behind prefers-reduced-motion; the reduced fallback is a tasteful static
+   scatter (pieces rest at their --cy with their tilt). */
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.confetti-piece {
+  position: absolute;
+  top: var(--cy);
+  left: var(--cx);
+  width: var(--cw);
+  height: var(--ch);
+  background: var(--cc);
+  border-radius: var(--cr, 1px);
+  opacity: var(--co, 0.85);
+  transform: rotate(var(--crot, 0deg));
+  will-change: transform, top;
+}
+/* Falling icon glyphs (trophy / star): no rectangle fill; the inline SVG inherits the shade colour
+   via currentColor and falls with the same keyframes as the confetti pieces. */
+.confetti-icon {
+  background: none;
+  border-radius: 0;
+  color: var(--cc);
+  display: inline-flex;
+}
+.confetti-icon svg {
+  display: block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .confetti-piece {
+    animation: confetti-fall var(--cdur, 6s) linear var(--cdelay, 0s) infinite;
+  }
+}
+@keyframes confetti-fall {
+  0%   { top: -14%; transform: translateX(0) rotate(0deg); opacity: 0; }
+  8%   { opacity: var(--co, 0.85); }
+  92%  { opacity: var(--co, 0.85); }
+  100% { top: 114%; transform: translateX(var(--csway, 0px)) rotate(var(--cspin, 360deg)); opacity: 0; }
+}
+
+/* ---- Hide the scrollbar on an INTENTIONALLY horizontally-scrollable rail ----
+   Keeps the scroll (touch / trackpad / drag), drops only the grey track+thumb, which on a short chip
+   rail reads as visual noise rather than affordance. Scroll functionality is unchanged, so no content
+   becomes unreachable. Applied to the Odds Time Machine filter-chip row. */
+.no-scrollbar {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* legacy Edge */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;              /* Chromium / Safari */
+}

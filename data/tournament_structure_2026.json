@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "source": "FIFA. Regulations for the FIFA World Cup 26 (May 2025 edition). Articles 11, 12, 14.",
+    "source_url_primary": "https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf",
+    "captured_on": "2026-06-02",
+    "captured_by": "wc2026 phase 1 setup"
+  },
+
+  "tournament": {
+    "name": "FIFA World Cup 26",
+    "name_short": "FIFA World Cup 2026",
+    "host_countries": ["Canada", "Mexico", "United States"],
+    "dates": {
+      "first_match": "2026-06-11",
+      "last_group_match": "2026-06-27",
+      "round_of_32_start": "2026-06-28",
+      "final": "2026-07-19",
+      "final_venue": "MetLife Stadium, East Rutherford, New Jersey, USA"
+    }
+  },
+
+  "format": {
+    "total_teams": 48,
+    "total_matches": 104,
+    "stages": ["group", "round_of_32", "round_of_16", "quarter_finals", "semi_finals", "third_place_playoff", "final"],
+    "group_stage": {
+      "num_groups": 12,
+      "teams_per_group": 4,
+      "matches_per_team": 3,
+      "matches_per_group": 6,
+      "total_group_matches": 72,
+      "group_codes": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"],
+      "match_day_pattern": [
+        {"matchday": 1, "fixtures_per_group": ["X1 v X2", "X3 v X4"]},
+        {"matchday": 2, "fixtures_per_group": ["X1 v X3", "X4 v X2"]},
+        {"matchday": 3, "fixtures_per_group": ["X4 v X1", "X2 v X3"]}
+      ],
+      "matchday_3_rule": "The last two matches in each group must have simultaneous kick-off times on the same day (unless force majeure)."
+    },
+    "host_team_slots": {
+      "A1": "Mexico",
+      "B1": "Canada",
+      "D1": "United States"
+    },
+    "qualification_from_groups": {
+      "rule": "Top 2 from each group plus the 8 best third-placed teams advance to the Round of 32.",
+      "direct_qualifiers": 24,
+      "best_third_qualifiers": 8,
+      "total_knockout_teams": 32
+    },
+    "knockout_stage": {
+      "format": "single_elimination",
+      "extra_time_rules": "If level after 90 minutes, 30 minutes of extra time (two 15-min halves with 5-min interval at end of normal time). If still level, penalty shoot-out.",
+      "third_place_playoff": true,
+      "annex_c_combinations": 495,
+      "annex_c_note": "Annex C of FIFA regulations contains 495 possible combinations of which 8 third-place teams advance and their R32 opponent. See third_place_matrix_2026.json (TBD)."
+    }
+  },
+
+  "key_correctness_risks": [
+    {
+      "risk": "Third-place qualification matrix (Annex C) — 495 combinations",
+      "mitigation": "Parse from Wikipedia or the FIFA regulations PDF. Cross-check at least 5 sample rows against the published table."
+    },
+    {
+      "risk": "R32 base schedule (M73-M88)",
+      "mitigation": "Already captured in knockout_slots_2026.json. Verified against FIFA regulations Article 12.6 and the Wikipedia knockout page."
+    },
+    {
+      "risk": "Tie-breaker order",
+      "mitigation": "See group_rules_2026.json. Authoritative source is Article 13 of the official PDF."
+    },
+    {
+      "risk": "Same-group teams cannot meet in R32",
+      "mitigation": "FIFA explicitly states this constraint in the R32 note. The Annex C matrix is designed so this never happens — verify when parsing Annex C."
+    }
+  ]
+}

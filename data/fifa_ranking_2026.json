@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "source": "FIFA/Coca-Cola Men's World Ranking. Captured from Wikipedia / ESPN.",
+    "captured_on": "2026-06-02",
+    "edition_captured": "2026-04-01",
+    "next_edition": "2026-06-11",
+    "next_edition_note": "The launch forecast is LOCKED to the 1 April 2026 edition per PM policy 2026-06-03 (see scripts/ingest_fifa_rankings.py); FIFA's next edition (2026-06-11, kickoff day) is NOT used for the launch forecast and may only enter post-launch as a normal admin update.",
+    "usage_in_simulator": [
+      "Step 3g of Article 13 (within-group tie-breaker terminal step) — use the latest available edition; for the locked launch forecast that is the 1 April 2026 edition.",
+      "Step 3h of Article 13 — if a tie survives 3g, fall back to the FIFA edition(s) immediately before 1 April 2026 (going backward in time). April 2026 is the launch/latest edition, not the fallback.",
+      "Same chain for best-third ranking (no head-to-head, but FIFA Ranking is the final fallback)."
+    ],
+    "scraping_url_primary": "https://en.wikipedia.org/wiki/FIFA_Men's_World_Ranking",
+    "scraping_url_fifa_official": "https://inside.fifa.com/fifa-world-ranking/men",
+    "scraping_url_fotmob": "https://www.fotmob.com/fifaranking/men"
+  },
+
+  "top_50_april_2026": [
+    {"rank": 1, "team": "France", "points": 1877.32},
+    {"rank": 2, "team": "Spain", "points": 1876.40},
+    {"rank": 3, "team": "Argentina", "points": 1874.81},
+    {"rank": 4, "team": "England", "points": 1825.97},
+    {"rank": 5, "team": "Portugal", "points": 1763.83},
+    {"rank": 6, "team": "Brazil", "points": 1761.16},
+    {"rank": 7, "team": "Netherlands", "points": 1757.87},
+    {"rank": 8, "team": "Morocco", "points": 1755.87},
+    {"rank": 9, "team": "Belgium", "points": 1734.71},
+    {"rank": 10, "team": "Germany", "points": 1730.37},
+    {"rank": 11, "team": "Croatia", "points": 1717.07},
+    {"rank": 12, "team": "Italy", "points": 1700.37, "_note": "Did NOT qualify for 2026 — lost playoff to Bosnia. Listed here only for completeness."},
+    {"rank": 13, "team": "Colombia", "points": 1693.09},
+    {"rank": 14, "team": "Senegal", "points": 1688.99},
+    {"rank": 15, "team": "Mexico", "points": 1681.03},
+    {"rank": 16, "team": "United States", "points": 1673.13},
+    {"rank": 17, "team": "Uruguay", "points": 1673.07},
+    {"rank": 18, "team": "Japan", "points": 1660.43},
+    {"rank": 19, "team": "Switzerland", "points": 1649.40},
+    {"rank": 20, "team": "Denmark", "points": 1620.81}
+  ],
+
+  "_incomplete_data_notice": "Only the top 20 are captured here. Claude Code should pull the full top-50 (and ideally all 48 qualified teams) from Wikipedia or FotMob into the database. The 'team' field needs alias-mapping to the canonical 2026 team names in teams_2026.csv (e.g., 'South Korea' vs 'Republic of Korea').",
+
+  "claude_code_tasks": [
+    "Day 2: Pull the complete April 1, 2026 ranking (all 211 FIFA-ranked teams or at minimum all 48 qualified teams) into a CSV/JSON.",
+    "Day 2: Pull at least one earlier edition (Jan 2026 or older) for the step-3h fallback chain. Older editions are useful as well for the Article 13 step 3h going-backward-in-time logic.",
+    "Launch: the launch ranking is LOCKED to the 1 April 2026 edition (already captured); do not pull a new edition for launch; the 2026-06-11 (kickoff-day) edition is post-launch only.",
+    "Throughout: store with edition_date in the DB so the simulator can identify 'latest' vs 'previous'."
+  ],
+
+  "sanity_check": {
+    "for_elo_validation": "When Phase 2.1 builds the in-house Elo from the historical results, the top-10 Elo teams should overlap with the top-10 FIFA-ranked teams above (modulo Italy, who didn't qualify). If overlap is <7/10, the Elo computation has a bug.",
+    "expected_elo_top_10": ["France", "Spain", "Argentina", "England", "Portugal", "Brazil", "Netherlands", "Morocco", "Belgium", "Germany"]
+  }
+}

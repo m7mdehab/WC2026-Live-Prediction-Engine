@@ -1,0 +1,49 @@
+team_id,name,short_name,group_code,group_seed,confederation,host_flag,fifa_rank
+MEX,Mexico,MEX,A,1,CONCACAF,True,15
+RSA,South Africa,RSA,A,2,CAF,False,60
+KOR,South Korea,KOR,A,3,AFC,False,25
+CZE,Czech Republic,CZE,A,4,UEFA,False,41
+CAN,Canada,CAN,B,1,CONCACAF,True,30
+BIH,Bosnia and Herzegovina,BIH,B,2,UEFA,False,65
+QAT,Qatar,QAT,B,3,AFC,False,55
+SUI,Switzerland,SUI,B,4,UEFA,False,19
+BRA,Brazil,BRA,C,1,CONMEBOL,False,6
+MAR,Morocco,MAR,C,2,CAF,False,8
+HAI,Haiti,HAI,C,3,CONCACAF,False,83
+SCO,Scotland,SCO,C,4,UEFA,False,43
+USA,United States,USA,D,1,CONCACAF,True,16
+PAR,Paraguay,PAR,D,2,CONMEBOL,False,40
+AUS,Australia,AUS,D,3,AFC,False,27
+TUR,Turkey,TUR,D,4,UEFA,False,22
+GER,Germany,GER,E,1,UEFA,False,10
+CUW,Curaçao,CUW,E,2,CONCACAF,False,82
+CIV,Ivory Coast,CIV,E,3,CAF,False,34
+ECU,Ecuador,ECU,E,4,CONMEBOL,False,23
+NED,Netherlands,NED,F,1,UEFA,False,7
+JPN,Japan,JPN,F,2,AFC,False,18
+SWE,Sweden,SWE,F,3,UEFA,False,38
+TUN,Tunisia,TUN,F,4,CAF,False,44
+BEL,Belgium,BEL,G,1,UEFA,False,9
+EGY,Egypt,EGY,G,2,CAF,False,29
+IRN,Iran,IRN,G,3,AFC,False,21
+NZL,New Zealand,NZL,G,4,OFC,False,85
+ESP,Spain,ESP,H,1,UEFA,False,2
+CPV,Cape Verde,CPV,H,2,CAF,False,69
+KSA,Saudi Arabia,KSA,H,3,AFC,False,61
+URU,Uruguay,URU,H,4,CONMEBOL,False,17
+FRA,France,FRA,I,1,UEFA,False,1
+SEN,Senegal,SEN,I,2,CAF,False,14
+IRQ,Iraq,IRQ,I,3,AFC,False,57
+NOR,Norway,NOR,I,4,UEFA,False,31
+ARG,Argentina,ARG,J,1,CONMEBOL,False,3
+ALG,Algeria,ALG,J,2,CAF,False,28
+AUT,Austria,AUT,J,3,UEFA,False,24
+JOR,Jordan,JOR,J,4,AFC,False,63
+POR,Portugal,POR,K,1,UEFA,False,5
+COD,DR Congo,COD,K,2,CAF,False,46
+UZB,Uzbekistan,UZB,K,3,AFC,False,50
+COL,Colombia,COL,K,4,CONMEBOL,False,13
+ENG,England,ENG,L,1,UEFA,False,4
+CRO,Croatia,CRO,L,2,UEFA,False,11
+GHA,Ghana,GHA,L,3,CAF,False,74
+PAN,Panama,PAN,L,4,CONCACAF,False,33

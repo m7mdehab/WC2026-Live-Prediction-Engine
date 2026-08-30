@@ -1,0 +1,27 @@
+# Python dependencies for the published World Cup 2026 forecasting engine.
+#
+# AUTHORED FOR THIS REPOSITORY, not copied. The private repository's requirements.txt pins thirteen
+# packages, because it also carries the Supabase pipeline, the ingestion scrapers and a raw-Postgres
+# gateway for a competition that is not published here. Shipping that file would ask a reader to
+# install eight things the published code never imports, and one of its comments describes a module
+# that does not exist in this tree.
+#
+# Derived by walking the AST of every published .py file and subtracting the standard library. Exact
+# pins, matching the versions the private gate passes on.
+
+# Data wrangling
+pandas==2.3.3
+numpy==2.2.6
+
+# The Dixon-Coles fit, the calibration assessment (Platt and isotonic), backtest metrics
+scipy==1.15.3
+scikit-learn==1.7.2
+
+# Tests
+pytest==8.4.2
+
+# NOT PINNED, AND SAID RATHER THAN LEFT TO FAIL: model/run_phase_2_4_final.py imports matplotlib at
+# module level to draw the reliability diagrams. matplotlib is absent from the private repository's
+# requirements.txt too, so that script does not run from a clean install in either repository. The
+# committed reliability CSVs under data/backtest/ and web/public/methodology/ are its output and are
+# what the methodology page renders; `pip install matplotlib` if you want to redraw them.

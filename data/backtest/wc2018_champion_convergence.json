@@ -1,0 +1,237 @@
+{
+  "year": "2018",
+  "opener": "2018-06-14",
+  "fit_max_date": "2018-06-14",
+  "host": "Russia",
+  "seed": 42,
+  "iters": 50000,
+  "config": {
+    "half_life": 1460.0,
+    "lambda_prior": 20.0,
+    "tiers": {
+      "1": 1.1,
+      "2": 0.75,
+      "3": 0.6,
+      "4": 0.45,
+      "5": 0.3
+    }
+  },
+  "eventual_champion": "France",
+  "stages": [
+    {
+      "stage": "pre",
+      "label": "Round of 16",
+      "remaining_teams": 16,
+      "fixed_matches": [],
+      "champion": {
+        "team": "France",
+        "rank_among_remaining": 5,
+        "champion_pct": 6.64
+      },
+      "remaining_top": [
+        {
+          "rank": 1,
+          "team": "Brazil",
+          "champion_pct": 16.98
+        },
+        {
+          "rank": 2,
+          "team": "Spain",
+          "champion_pct": 15.6
+        },
+        {
+          "rank": 3,
+          "team": "Argentina",
+          "champion_pct": 9.12
+        },
+        {
+          "rank": 4,
+          "team": "England",
+          "champion_pct": 6.81
+        },
+        {
+          "rank": 5,
+          "team": "France",
+          "champion_pct": 6.64
+        },
+        {
+          "rank": 6,
+          "team": "Belgium",
+          "champion_pct": 6.47
+        },
+        {
+          "rank": 7,
+          "team": "Portugal",
+          "champion_pct": 6.37
+        },
+        {
+          "rank": 8,
+          "team": "Colombia",
+          "champion_pct": 5.94
+        }
+      ]
+    },
+    {
+      "stage": "post_r16",
+      "label": "Quarter-finals",
+      "remaining_teams": 8,
+      "fixed_matches": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "r8"
+      ],
+      "champion": {
+        "team": "France",
+        "rank_among_remaining": 3,
+        "champion_pct": 14.69
+      },
+      "remaining_top": [
+        {
+          "rank": 1,
+          "team": "Brazil",
+          "champion_pct": 26.61
+        },
+        {
+          "rank": 2,
+          "team": "England",
+          "champion_pct": 15.36
+        },
+        {
+          "rank": 3,
+          "team": "France",
+          "champion_pct": 14.69
+        },
+        {
+          "rank": 4,
+          "team": "Croatia",
+          "champion_pct": 10.44
+        },
+        {
+          "rank": 5,
+          "team": "Belgium",
+          "champion_pct": 10.28
+        },
+        {
+          "rank": 6,
+          "team": "Uruguay",
+          "champion_pct": 8.46
+        },
+        {
+          "rank": 7,
+          "team": "Russia",
+          "champion_pct": 7.34
+        },
+        {
+          "rank": 8,
+          "team": "Sweden",
+          "champion_pct": 6.82
+        }
+      ]
+    },
+    {
+      "stage": "post_qf",
+      "label": "Semi-finals",
+      "remaining_teams": 4,
+      "fixed_matches": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "r8",
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "champion": {
+        "team": "France",
+        "rank_among_remaining": 1,
+        "champion_pct": 29.13
+      },
+      "remaining_top": [
+        {
+          "rank": 1,
+          "team": "France",
+          "champion_pct": 29.13
+        },
+        {
+          "rank": 2,
+          "team": "England",
+          "champion_pct": 26.59
+        },
+        {
+          "rank": 3,
+          "team": "Belgium",
+          "champion_pct": 24.68
+        },
+        {
+          "rank": 4,
+          "team": "Croatia",
+          "champion_pct": 19.6
+        }
+      ]
+    },
+    {
+      "stage": "post_sf",
+      "label": "Final",
+      "remaining_teams": 2,
+      "fixed_matches": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "r8",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "s1",
+        "s2"
+      ],
+      "champion": {
+        "team": "France",
+        "rank_among_remaining": 1,
+        "champion_pct": 57.3
+      },
+      "remaining_top": [
+        {
+          "rank": 1,
+          "team": "France",
+          "champion_pct": 57.3
+        },
+        {
+          "rank": 2,
+          "team": "Croatia",
+          "champion_pct": 42.7
+        }
+      ]
+    }
+  ],
+  "champion_rank_trajectory": [
+    5,
+    3,
+    1,
+    1
+  ],
+  "rank_trajectory_monotone": true,
+  "became_number_one_at": "Semi-finals",
+  "converged_before_final": true,
+  "honest_read": "France (the actual 2018 champion) started #5 of 16 at 6.64% in the round-of-16 field, and became the model's #1 remaining pick by the semi-finals field (the field shrinks each round, so some of the rise is mechanical via elimination).",
+  "notes": {
+    "engine": "reuses the 32-team resolver in model.backtest_champion_odds (BRACKET, BacktestSampler, build_structure, tiebreakers, score_matrix); conditions on ACTUAL advancers per stage, re-simulates the remaining bracket",
+    "leakage_guard": "strengths fixed at the pre-opener fit (no in-tournament refit); each stage pins ONLY results up to that round (assert_no_future_leak); the final is never pinned",
+    "rank_definition": "the eventual champion's rank by champion-odds among the teams still alive after the stage's actual results (the remaining field)",
+    "narrowing_caveat": "the remaining field shrinks each round, so some of the rank rise is mechanical via elimination, not the model sharpening"
+  }
+}

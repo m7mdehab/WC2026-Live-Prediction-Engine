@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "source": "FIFA. Regulations for the FIFA World Cup 26 (May 2025 edition). Article 13.",
+    "source_url_primary": "https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf",
+    "source_url_mirror": "https://www.worldcup2026football.co.uk/wc-2026-regulations.pdf",
+    "captured_on": "2026-06-02",
+    "captured_by": "wc2026 phase 1 setup",
+    "warning_to_implementer": "This file overrides the tie-breaker rules described in World_Cup_2026_Build_Plan_5_Phases_v1_2.md (sections 2.6 / 3.3 / Final Core Rule Set). The build plan v1.2 has the tie-breaker ORDER wrong (it put head-to-head AFTER overall stats), names the terminal tie-breaker incorrectly (uses 'seeded random draw'; FIFA uses FIFA Ranking, no drawing of lots in 2026), and is wrong that 'fair-play data is not required' (team conduct IS in the chain). See phase_1_corrections.md.",
+    "points_system": {
+      "win": 3,
+      "draw": 1,
+      "loss": 0
+    }
+  },
+
+  "within_group_ranking": {
+    "primary": "points",
+    "step_1_head_to_head": [
+      {
+        "id": "1a",
+        "name": "head_to_head_points",
+        "description": "Greatest number of points obtained in the group matches between the teams concerned."
+      },
+      {
+        "id": "1b",
+        "name": "head_to_head_goal_difference",
+        "description": "Superior goal difference resulting from the group matches between the teams concerned."
+      },
+      {
+        "id": "1c",
+        "name": "head_to_head_goals_scored",
+        "description": "Greatest number of goals scored in all group matches between the teams concerned."
+      }
+    ],
+    "step_2_reapply_then_overall": {
+      "reapply_rule": "If, after applying 1a-1c, teams still have an equal ranking, criteria 1a-1c are applied to the matches between the REMAINING tied teams only (e.g. three teams tied, one separated by head-to-head, the other two reranked using only their head-to-head match). If still no decision, proceed to 2d-2f.",
+      "criteria": [
+        {
+          "id": "2d",
+          "name": "overall_goal_difference",
+          "description": "Superior goal difference in all group matches."
+        },
+        {
+          "id": "2e",
+          "name": "overall_goals_scored",
+          "description": "Greatest number of goals scored in all group matches."
+        },
+        {
+          "id": "2f",
+          "name": "team_conduct_score",
+          "description": "Highest team conduct score (players and team officials) relating to yellow and red cards. Higher (less negative) score ranks higher.",
+          "deductions": {
+            "yellow_card": -1,
+            "indirect_red_card_two_yellows": -3,
+            "direct_red_card": -4,
+            "yellow_card_and_direct_red_in_same_match": -5,
+            "note": "Only ONE deduction applies to a player or team official in a single match (the most severe one)."
+          },
+          "ranking_subtlety": "If after a criterion (d/e/f) one team is separated but the rest remain tied, the remaining teams continue to the NEXT criterion. The second step does not restart after a partial separation."
+        }
+      ]
+    },
+    "step_3_fifa_ranking": [
+      {
+        "id": "3g",
+        "name": "fifa_ranking_latest",
+        "description": "Ranked by the most recent published edition of the FIFA/Coca-Cola Men's World Ranking."
+      },
+      {
+        "id": "3h",
+        "name": "fifa_ranking_previous",
+        "description": "Ranked by the edition immediately preceding the most recent, continuing back until a decision can be made."
+      }
+    ],
+    "drawing_of_lots": false,
+    "drawing_of_lots_note": "Unlike previous tournaments, the 2026 World Cup does NOT use drawing of lots. The FIFA Ranking chain is deterministic and guaranteed to terminate."
+  },
+
+  "best_third_placed_teams_ranking": {
+    "scope": "Used to rank the 12 third-placed teams across all groups and select the best 8 for the Round of 32. Head-to-head criteria do NOT apply here because third-placed teams in different groups have not played each other.",
+    "criteria": [
+      {
+        "id": "a",
+        "name": "points",
+        "description": "Greatest number of points obtained in all group matches."
+      },
+      {
+        "id": "b",
+        "name": "goal_difference",
+        "description": "Goal difference resulting from all group matches."
+      },
+      {
+        "id": "c",
+        "name": "goals_scored",
+        "description": "Greatest number of goals scored in all group matches."
+      },
+      {
+        "id": "d",
+        "name": "team_conduct_score",
+        "description": "Highest team conduct score (calculated as in within_group_ranking step 2f)."
+      },
+      {
+        "id": "e",
+        "name": "fifa_ranking_latest",
+        "description": "Most recent FIFA/Coca-Cola Men's World Ranking."
+      },
+      {
+        "id": "f",
+        "name": "fifa_ranking_previous",
+        "description": "Earlier FIFA Ranking editions, continually until a decision can be made."
+      }
+    ]
+  },
+
+  "simulator_implementation_notes": {
+    "simulation_scope": "The Monte Carlo simulator does NOT simulate cards/disciplinary events per match, so team_conduct_score cannot be computed inside a simulation.",
+    "tie_break_collapse_policy": "When a tie reaches the team_conduct_score step inside a simulation, collapse the remaining criteria into a deterministic, seeded tiebreaker derived from a pre-tournament prior (e.g., the team's pre-tournament Elo). This is reproducible, defensible, and avoids fake-data fabrication.",
+    "alternative_collapse_policy": "Acceptable: use the team's pre-tournament FIFA Ranking directly, since that is the official chain (3g) and is data we already have. This is preferred over Elo for fidelity to FIFA's chain.",
+    "frequency_of_deep_ties": "Ties that survive points + head-to-head + overall GD + overall GS are vanishingly rare in simulation (<1% of group instances). The choice of collapse policy has negligible effect on aggregate champion probabilities.",
+    "what_to_disclose_on_methodology_page": "The simulator implements the full Article 13 chain through overall goals scored, then collapses subsequent tie-breakers (team conduct + FIFA ranking chain) by ranking still-tied teams by their pre-tournament FIFA Ranking. Drawing of lots is NOT used (FIFA does not use it for 2026). Document the collapse policy honestly."
+  }
+}

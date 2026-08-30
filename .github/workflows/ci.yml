@@ -1,0 +1,91 @@
+# THE PUBLICATION GATE, and it runs before anything else in this file.
+#
+# This repository is a curated extract from a private one. The risk it carries is not a failing test,
+# it is a file that should never have been here, committed once and public permanently. So the first
+# job asserts that every tracked file is admitted by an explicit rule in
+# tools/publication_allowlist.py, and the suite that enforces it plants one offender per category the
+# extract is meant to exclude and requires each to be rejected.
+#
+# The allowlist job is deliberately SEPARATE from the test job and deliberately cheap. It installs no
+# dependencies and finishes in seconds, so there is no version of "CI was slow so I skipped it" that
+# also skips the publication check.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+# A gate that only reads. Cancelling a superseded run costs nothing, because its answer is about a
+# commit that is no longer the tip.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  publication-gate:
+    name: nothing is published that is not on the allowlist
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      # Single source for this job's interpreter pin, fed to setup-python AND re-read by the
+      # assertion below, so the declaration and its check cannot drift apart.
+      PYTHON_VERSION: "3.10"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Assert the interpreter pin actually bound
+        # A pinned version that does not bind is a stated guarantee that does not hold, and nothing
+        # here can check it from outside. So the job proves it to itself, immediately after
+        # setup-python and before anything runs under an unverified interpreter.
+        run: |
+          set -eu
+          python --version
+          resolved="$(python -c 'import sys; print("%d.%d" % sys.version_info[:2])')"
+          if [ "$resolved" != "$PYTHON_VERSION" ]; then
+            echo "::error::interpreter pin did not bind: declared $PYTHON_VERSION, resolved $resolved"
+            exit 1
+          fi
+      - name: Publication allowlist
+        # No pip install. The allowlist and its suite import only the standard library, which is why
+        # this job is seconds rather than minutes.
+        run: python -m pytest tools/test_publication_allowlist.py -q
+
+  suites:
+    name: model and simulator suites
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Runs only if the publication gate passed. A green test suite on a tree that leaked something is
+    # not a useful signal, and running the two in parallel would produce exactly that.
+    needs: publication-gate
+    env:
+      PYTHON_VERSION: "3.10"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - name: Assert the interpreter pin actually bound
+        run: |
+          set -eu
+          python --version
+          resolved="$(python -c 'import sys; print("%d.%d" % sys.version_info[:2])')"
+          if [ "$resolved" != "$PYTHON_VERSION" ]; then
+            echo "::error::interpreter pin did not bind: declared $PYTHON_VERSION, resolved $resolved"
+            exit 1
+          fi
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: pytest
+        # Creds-free by construction: nothing in the published suite reads a database, a network
+        # source or an environment variable. If a suite ever needs one, it does not belong here.
+        run: python -m pytest tests/ -q

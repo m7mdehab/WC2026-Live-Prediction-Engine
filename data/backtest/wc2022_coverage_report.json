@@ -1,0 +1,56 @@
+{
+  "cutoff": "2022-11-20",
+  "roster_players": 677,
+  "understat_matched_finishing": 313,
+  "understat_ambiguous_names_dropped": 65,
+  "overall_finishing_pct": 46.2,
+  "by_confederation": {
+    "AFC": {
+      "n": 126,
+      "finishing": 14,
+      "minutes": 44,
+      "pre_intl": 35,
+      "finishing_pct": 11.1
+    },
+    "CAF": {
+      "n": 106,
+      "finishing": 47,
+      "minutes": 52,
+      "pre_intl": 19,
+      "finishing_pct": 44.3
+    },
+    "CONCACAF": {
+      "n": 82,
+      "finishing": 18,
+      "minutes": 30,
+      "pre_intl": 18,
+      "finishing_pct": 22.0
+    },
+    "CONMEBOL": {
+      "n": 87,
+      "finishing": 48,
+      "minutes": 58,
+      "pre_intl": 24,
+      "finishing_pct": 55.2
+    },
+    "UEFA": {
+      "n": 276,
+      "finishing": 186,
+      "minutes": 231,
+      "pre_intl": 182,
+      "finishing_pct": 67.4
+    }
+  },
+  "totals": {
+    "n": 677,
+    "finishing": 313,
+    "minutes": 415,
+    "pre_intl": 278
+  },
+  "sources": {
+    "understat": "2021-22 top-5 European leagues (goals/xG/minutes); leakage-clean date 2022-05-31",
+    "statsbomb_internationals": "repo readings dated < 2022-11-20 (WC2018, Euro2020); minutes only (goals null)"
+  },
+  "structural_gap_note": "AFC squads play mainly J-League / K-League / Saudi Pro League / Qatar Stars League, which have no public pre-2022 shot-level xG on any source (Understat or FBref), so finishing inputs cannot be assembled leakage-clean for most AFC players regardless of scraping effort. FBref could lift CONMEBOL/CAF/CONCACAF (MLS, Liga MX, Brazil Serie A, Eredivisie, Primeira) but not AFC.",
+  "match_caveat": "Understat carries no nationality; players matched to the roster by unique normalized name only. Ambiguous names were dropped (see understat_ambiguous_names_dropped)."
+}

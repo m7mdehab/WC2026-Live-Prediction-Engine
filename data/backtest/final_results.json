@@ -1,0 +1,64 @@
+{
+  "cfg": {
+    "half_life": 1460.0,
+    "lambda_prior": 20.0,
+    "tiers": {
+      "1": 1.1,
+      "2": 0.75,
+      "3": 0.6,
+      "4": 0.45,
+      "5": 0.3
+    }
+  },
+  "acceptance": {
+    "France": {
+      "pre": 0.0607,
+      "post": 0.0711
+    },
+    "Brazil": {
+      "pre": 0.0658,
+      "post": 0.0731
+    },
+    "Germany": {
+      "pre": 0.0359,
+      "post": 0.0423
+    },
+    "Mexico": {
+      "pre": 0.0448,
+      "post": 0.0383
+    },
+    "Japan": {
+      "pre": 0.0409,
+      "post": 0.0321
+    }
+  },
+  "top12_post": {
+    "Spain": 0.1044,
+    "Argentina": 0.095,
+    "Brazil": 0.0731,
+    "France": 0.0711,
+    "England": 0.0534,
+    "Portugal": 0.0446,
+    "Germany": 0.0423,
+    "Netherlands": 0.0422,
+    "Mexico": 0.0383,
+    "Colombia": 0.037,
+    "Belgium": 0.0322,
+    "Japan": 0.0321
+  },
+  "elo_top10": [
+    "Spain",
+    "Argentina",
+    "France",
+    "Brazil",
+    "England",
+    "Netherlands",
+    "Portugal",
+    "Colombia",
+    "Germany",
+    "Croatia"
+  ],
+  "ecuador_rank": 16,
+  "bolivia_rank": 84,
+  "mexico_adv_pre_post": null
+}

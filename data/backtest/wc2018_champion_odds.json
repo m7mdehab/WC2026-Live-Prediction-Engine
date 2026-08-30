@@ -1,0 +1,260 @@
+{
+  "year": "2018",
+  "opener": "2018-06-14",
+  "fit_max_date": "2018-06-14",
+  "host": "Russia",
+  "seed": 42,
+  "iters": 50000,
+  "config": {
+    "half_life": 1460.0,
+    "lambda_prior": 20.0,
+    "tiers": {
+      "1": 1.1,
+      "2": 0.75,
+      "3": 0.6,
+      "4": 0.45,
+      "5": 0.3
+    }
+  },
+  "champion_sum_pct": 100.0,
+  "top10_champion_odds": [
+    {
+      "rank": 1,
+      "team": "Brazil",
+      "champion_pct": 14.35
+    },
+    {
+      "rank": 2,
+      "team": "Germany",
+      "champion_pct": 12.38
+    },
+    {
+      "rank": 3,
+      "team": "Spain",
+      "champion_pct": 10.53
+    },
+    {
+      "rank": 4,
+      "team": "Argentina",
+      "champion_pct": 8.51
+    },
+    {
+      "rank": 5,
+      "team": "France",
+      "champion_pct": 5.83
+    },
+    {
+      "rank": 6,
+      "team": "Portugal",
+      "champion_pct": 5.08
+    },
+    {
+      "rank": 7,
+      "team": "Belgium",
+      "champion_pct": 4.88
+    },
+    {
+      "rank": 8,
+      "team": "England",
+      "champion_pct": 4.55
+    },
+    {
+      "rank": 9,
+      "team": "Colombia",
+      "champion_pct": 3.42
+    },
+    {
+      "rank": 10,
+      "team": "Uruguay",
+      "champion_pct": 3.17
+    }
+  ],
+  "full_ranking": [
+    {
+      "rank": 1,
+      "team": "Brazil",
+      "champion_pct": 14.35
+    },
+    {
+      "rank": 2,
+      "team": "Germany",
+      "champion_pct": 12.38
+    },
+    {
+      "rank": 3,
+      "team": "Spain",
+      "champion_pct": 10.53
+    },
+    {
+      "rank": 4,
+      "team": "Argentina",
+      "champion_pct": 8.51
+    },
+    {
+      "rank": 5,
+      "team": "France",
+      "champion_pct": 5.83
+    },
+    {
+      "rank": 6,
+      "team": "Portugal",
+      "champion_pct": 5.08
+    },
+    {
+      "rank": 7,
+      "team": "Belgium",
+      "champion_pct": 4.88
+    },
+    {
+      "rank": 8,
+      "team": "England",
+      "champion_pct": 4.55
+    },
+    {
+      "rank": 9,
+      "team": "Colombia",
+      "champion_pct": 3.42
+    },
+    {
+      "rank": 10,
+      "team": "Uruguay",
+      "champion_pct": 3.17
+    },
+    {
+      "rank": 11,
+      "team": "Croatia",
+      "champion_pct": 2.54
+    },
+    {
+      "rank": 12,
+      "team": "Peru",
+      "champion_pct": 2.44
+    },
+    {
+      "rank": 13,
+      "team": "Mexico",
+      "champion_pct": 2.43
+    },
+    {
+      "rank": 14,
+      "team": "Iran",
+      "champion_pct": 2.1
+    },
+    {
+      "rank": 15,
+      "team": "Switzerland",
+      "champion_pct": 1.97
+    },
+    {
+      "rank": 16,
+      "team": "Russia",
+      "champion_pct": 1.5
+    },
+    {
+      "rank": 17,
+      "team": "Japan",
+      "champion_pct": 1.4
+    },
+    {
+      "rank": 18,
+      "team": "Poland",
+      "champion_pct": 1.36
+    },
+    {
+      "rank": 19,
+      "team": "Costa Rica",
+      "champion_pct": 1.28
+    },
+    {
+      "rank": 20,
+      "team": "Denmark",
+      "champion_pct": 1.26
+    },
+    {
+      "rank": 21,
+      "team": "Sweden",
+      "champion_pct": 1.21
+    },
+    {
+      "rank": 22,
+      "team": "Senegal",
+      "champion_pct": 1.19
+    },
+    {
+      "rank": 23,
+      "team": "Australia",
+      "champion_pct": 1.16
+    },
+    {
+      "rank": 24,
+      "team": "Egypt",
+      "champion_pct": 0.88
+    },
+    {
+      "rank": 25,
+      "team": "Morocco",
+      "champion_pct": 0.71
+    },
+    {
+      "rank": 26,
+      "team": "South Korea",
+      "champion_pct": 0.69
+    },
+    {
+      "rank": 27,
+      "team": "Nigeria",
+      "champion_pct": 0.65
+    },
+    {
+      "rank": 28,
+      "team": "Panama",
+      "champion_pct": 0.57
+    },
+    {
+      "rank": 29,
+      "team": "Iceland",
+      "champion_pct": 0.55
+    },
+    {
+      "rank": 30,
+      "team": "Serbia",
+      "champion_pct": 0.55
+    },
+    {
+      "rank": 31,
+      "team": "Tunisia",
+      "champion_pct": 0.48
+    },
+    {
+      "rank": 32,
+      "team": "Saudi Arabia",
+      "champion_pct": 0.36
+    }
+  ],
+  "eventual_winner": {
+    "team": "France",
+    "champion_rank": 5,
+    "champion_pct": 5.83,
+    "reach_final_pct": 11.21
+  },
+  "finalists": [
+    {
+      "team": "France",
+      "champion_rank": 5,
+      "champion_pct": 5.83,
+      "reach_final_pct": 11.21
+    },
+    {
+      "team": "Croatia",
+      "champion_rank": 11,
+      "champion_pct": 2.54,
+      "reach_final_pct": 5.72
+    }
+  ],
+  "honest_read": "France (the actual 2018 champion) was in the model's top-5 at 5.83% champion odds; the field was spread out (top pick Brazil 14.35%).",
+  "notes": {
+    "engine": "format-correct 32-team resolver (the 2026 monte_carlo is 48-team/best-thirds only); reuses fit_pre, chosen_config, tiebreakers, score_matrix, MC contract",
+    "leakage_guard": "strengths fit strictly before the opener (compute_elo/dc.fit fit_max_date)",
+    "host_advantage": "applied to Russia (home throughout), scaled by H_WC_DISCOUNT=0.7"
+  }
+}

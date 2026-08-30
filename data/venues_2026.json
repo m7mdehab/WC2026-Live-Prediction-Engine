@@ -1,0 +1,235 @@
+{
+  "_meta": {
+    "source": "FIFA official announcement + StadiumDB + cross-checked against Wikipedia",
+    "captured_on": "2026-06-02",
+    "verification_note": "Coordinates and elevations are approximate (from public sources, not GPS-verified). Claude Code should refine via Wikipedia infoboxes when building the venues seed script. Altitude is the field/pitch elevation, not maximum stadium height.",
+    "field_definitions": {
+      "altitude_m": "Stadium elevation above sea level in meters",
+      "capacity": "Stadium capacity for World Cup (FIFA-adjusted, may differ from non-WC capacity)",
+      "climate_category": "rough proxy for match conditions: humid_subtropical, mediterranean, oceanic, semi_arid, tropical, temperate_continental, high_altitude",
+      "roof_type": "open, retractable, fixed (for fixed-roof or domed stadiums)"
+    }
+  },
+
+  "venues": [
+    {
+      "venue_id": "TOR",
+      "city": "Toronto",
+      "country": "Canada",
+      "stadium": "BMO Field",
+      "capacity_wc": 45000,
+      "latitude": 43.6326,
+      "longitude": -79.4185,
+      "altitude_m": 76,
+      "climate_category": "temperate_continental",
+      "roof_type": "open",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "VAN",
+      "city": "Vancouver",
+      "country": "Canada",
+      "stadium": "BC Place",
+      "capacity_wc": 54500,
+      "latitude": 49.2767,
+      "longitude": -123.1119,
+      "altitude_m": 3,
+      "climate_category": "oceanic",
+      "roof_type": "retractable",
+      "host_country_flag": true
+    },
+
+    {
+      "venue_id": "MEX",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "stadium": "Estadio Azteca",
+      "capacity_wc": 87500,
+      "latitude": 19.3028,
+      "longitude": -99.1505,
+      "altitude_m": 2240,
+      "climate_category": "high_altitude",
+      "roof_type": "open",
+      "host_country_flag": true,
+      "notable": "Opening match venue (Jun 11). Highest-altitude WC venue ever — significant physiological effect for visiting teams."
+    },
+    {
+      "venue_id": "GDL",
+      "city": "Guadalajara",
+      "country": "Mexico",
+      "stadium": "Estadio Akron",
+      "capacity_wc": 46232,
+      "latitude": 20.6829,
+      "longitude": -103.4624,
+      "altitude_m": 1566,
+      "climate_category": "high_altitude",
+      "roof_type": "open",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "MTY",
+      "city": "Monterrey",
+      "country": "Mexico",
+      "stadium": "Estadio BBVA",
+      "capacity_wc": 53500,
+      "latitude": 25.6692,
+      "longitude": -100.2447,
+      "altitude_m": 538,
+      "climate_category": "semi_arid",
+      "roof_type": "open",
+      "host_country_flag": true
+    },
+
+    {
+      "venue_id": "ATL",
+      "city": "Atlanta",
+      "country": "United States",
+      "stadium": "Mercedes-Benz Stadium",
+      "capacity_wc": 75000,
+      "latitude": 33.7553,
+      "longitude": -84.4006,
+      "altitude_m": 320,
+      "climate_category": "humid_subtropical",
+      "roof_type": "retractable",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "BOS",
+      "city": "Boston (Foxborough)",
+      "country": "United States",
+      "stadium": "Gillette Stadium",
+      "capacity_wc": 65878,
+      "latitude": 42.0909,
+      "longitude": -71.2643,
+      "altitude_m": 60,
+      "climate_category": "humid_continental",
+      "roof_type": "open",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "DAL",
+      "city": "Dallas (Arlington)",
+      "country": "United States",
+      "stadium": "AT&T Stadium",
+      "capacity_wc": 80000,
+      "latitude": 32.7473,
+      "longitude": -97.0945,
+      "altitude_m": 170,
+      "climate_category": "humid_subtropical",
+      "roof_type": "retractable",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "HOU",
+      "city": "Houston",
+      "country": "United States",
+      "stadium": "NRG Stadium",
+      "capacity_wc": 72220,
+      "latitude": 29.6847,
+      "longitude": -95.4107,
+      "altitude_m": 25,
+      "climate_category": "humid_subtropical",
+      "roof_type": "retractable",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "KAN",
+      "city": "Kansas City",
+      "country": "United States",
+      "stadium": "Arrowhead Stadium",
+      "capacity_wc": 76416,
+      "latitude": 39.0489,
+      "longitude": -94.4839,
+      "altitude_m": 270,
+      "climate_category": "humid_continental",
+      "roof_type": "open",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "LA",
+      "city": "Los Angeles (Inglewood)",
+      "country": "United States",
+      "stadium": "SoFi Stadium",
+      "capacity_wc": 70240,
+      "latitude": 33.9534,
+      "longitude": -118.3387,
+      "altitude_m": 25,
+      "climate_category": "mediterranean",
+      "roof_type": "fixed",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "MIA",
+      "city": "Miami (Miami Gardens)",
+      "country": "United States",
+      "stadium": "Hard Rock Stadium",
+      "capacity_wc": 65326,
+      "latitude": 25.9580,
+      "longitude": -80.2389,
+      "altitude_m": 3,
+      "climate_category": "tropical",
+      "roof_type": "open",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "NY",
+      "city": "New York / New Jersey (East Rutherford)",
+      "country": "United States",
+      "stadium": "MetLife Stadium",
+      "capacity_wc": 82500,
+      "latitude": 40.8136,
+      "longitude": -74.0744,
+      "altitude_m": 2,
+      "climate_category": "humid_subtropical",
+      "roof_type": "open",
+      "host_country_flag": true,
+      "notable": "Final venue (Jul 19, 2026)"
+    },
+    {
+      "venue_id": "PHI",
+      "city": "Philadelphia",
+      "country": "United States",
+      "stadium": "Lincoln Financial Field",
+      "capacity_wc": 67594,
+      "latitude": 39.9008,
+      "longitude": -75.1675,
+      "altitude_m": 12,
+      "climate_category": "humid_subtropical",
+      "roof_type": "open",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "SF",
+      "city": "San Francisco (Santa Clara)",
+      "country": "United States",
+      "stadium": "Levi's Stadium",
+      "capacity_wc": 68500,
+      "latitude": 37.4030,
+      "longitude": -121.9698,
+      "altitude_m": 12,
+      "climate_category": "mediterranean",
+      "roof_type": "open",
+      "host_country_flag": true
+    },
+    {
+      "venue_id": "SEA",
+      "city": "Seattle",
+      "country": "United States",
+      "stadium": "Lumen Field",
+      "capacity_wc": 68740,
+      "latitude": 47.5952,
+      "longitude": -122.3316,
+      "altitude_m": 5,
+      "climate_category": "oceanic",
+      "roof_type": "open",
+      "host_country_flag": true
+    }
+  ],
+
+  "model_feature_notes": {
+    "altitude_effect": "Mexico City (2240m) and Guadalajara (1566m) are the only meaningfully high-altitude venues. Effect on visiting teams from sea-level countries is real but quantifiable — academic literature suggests ~0.1 to 0.3 goal-difference effect per 1000m of altitude differential, modulated by acclimatization time.",
+    "climate_effect": "Houston, Miami, Atlanta, Dallas in June-July are extreme heat/humidity environments. Open-air matches in these cities will affect physical performance; retractable-roof games less so.",
+    "rest_and_travel": "16 venues × 4 timezones (PT through ET, plus Mexico CT). Travel distance and timezone-change feed into the model's rest/fatigue features for v1.1+. Use the lat/lng above to compute haversine distance.",
+    "for_launch_model": "Use altitude_m and country (USA/Mexico/Canada) as features. Climate and roof_type defer to v1.2."
+  }
+}

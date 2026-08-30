@@ -1,0 +1,1263 @@
+{
+  "_meta": {
+    "artifact_version": "players-projections-v2.0",
+    "as_of": "2026-06-14",
+    "generated_by": "scripts/gen_locked_pretournament.py",
+    "label": "pre-tournament baseline",
+    "player_count": 109,
+    "source_artifact": "players/artifacts/player_projections.json",
+    "statsbomb_keyed_count": 99
+  },
+  "byNameNation": {
+    "achrafhakimi|morocco": {
+      "name": "Achraf Hakimi",
+      "nation": "Morocco",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "adamtaggart|australia": {
+      "name": "Adam Taggart",
+      "nation": "Australia",
+      "xaPre": 0.1606,
+      "xgPre": 0.8252
+    },
+    "adrienrabiot|france": {
+      "name": "Adrien Rabiot",
+      "nation": "France",
+      "xaPre": 0.5239,
+      "xgPre": 0.6985
+    },
+    "alexandersrloth|norway": {
+      "name": "Alexander Sørloth",
+      "nation": "Norway",
+      "xaPre": 0.1942,
+      "xgPre": 0.8569
+    },
+    "alexismacallister|argentina": {
+      "name": "Alexis Mac Allister",
+      "nation": "Argentina",
+      "xaPre": 0.3751,
+      "xgPre": 0.5669
+    },
+    "alirezajahanbakhsh|iranislamicrepublicof": {
+      "name": "Alireza Jahanbakhsh",
+      "nation": "Iran, Islamic Republic of",
+      "xaPre": 0.1912,
+      "xgPre": 0.3004
+    },
+    "alphonsodavies|canada": {
+      "name": "Alphonso Davies",
+      "nation": "Canada",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "andrejkramaric|croatia": {
+      "name": "Andrej Kramarić",
+      "nation": "Croatia",
+      "xaPre": 0.4128,
+      "xgPre": 0.9659
+    },
+    "antoneerobinson|unitedstatesofamerica": {
+      "name": "Antonee Robinson",
+      "nation": "United States of America",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "antoniorudiger|germany": {
+      "name": "Antonio Rüdiger",
+      "nation": "Germany",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "aurelientchouameni|france": {
+      "name": "Aurélien Tchouaméni",
+      "nation": "France",
+      "xaPre": 0.2736,
+      "xgPre": 0.3814
+    },
+    "aymericlaporte|spain": {
+      "name": "Aymeric Laporte",
+      "nation": "Spain",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "brahimdiaz|morocco": {
+      "name": "Brahim Díaz",
+      "nation": "Morocco",
+      "xaPre": 0.2877,
+      "xgPre": 0.4883
+    },
+    "breelembolo|switzerland": {
+      "name": "Breel Embolo",
+      "nation": "Switzerland",
+      "xaPre": 0.3068,
+      "xgPre": 1.1185
+    },
+    "brunofernandes|portugal": {
+      "name": "Bruno Fernandes",
+      "nation": "Portugal",
+      "xaPre": 1.1308,
+      "xgPre": 1.0624
+    },
+    "brunoguimaraes|brazil": {
+      "name": "Bruno Guimarães",
+      "nation": "Brazil",
+      "xaPre": 0.3917,
+      "xgPre": 0.5332
+    },
+    "bukayosaka|england": {
+      "name": "Bukayo Saka",
+      "nation": "England",
+      "xaPre": 0.7075,
+      "xgPre": 0.6922
+    },
+    "christianpulisic|unitedstatesofamerica": {
+      "name": "Christian Pulisic",
+      "nation": "United States of America",
+      "xaPre": 0.5792,
+      "xgPre": 0.7753
+    },
+    "codygakpo|netherlands": {
+      "name": "Cody Gakpo",
+      "nation": "Netherlands",
+      "xaPre": 0.8416,
+      "xgPre": 0.8758
+    },
+    "cristianoronaldo|portugal": {
+      "name": "Cristiano Ronaldo",
+      "nation": "Portugal",
+      "xaPre": 0.5509,
+      "xgPre": 2.579
+    },
+    "cristianromero|argentina": {
+      "name": "Cristian Romero",
+      "nation": "Argentina",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "danielmunoz|colombia": {
+      "name": "Daniel Muñoz",
+      "nation": "Colombia",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "darwinnunez|uruguay": {
+      "name": "Darwin Núñez",
+      "nation": "Uruguay",
+      "xaPre": 0.1926,
+      "xgPre": 0.7208
+    },
+    "declanrice|england": {
+      "name": "Declan Rice",
+      "nation": "England",
+      "xaPre": 0.4328,
+      "xgPre": 0.4514
+    },
+    "edsonalvarez|mexico": {
+      "name": "Edson Álvarez",
+      "nation": "Mexico",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "ennervalencia|ecuador": {
+      "name": "Enner Valencia",
+      "nation": "Ecuador",
+      "xaPre": 0.0964,
+      "xgPre": 0.4416
+    },
+    "enzofernandez|argentina": {
+      "name": "Enzo Fernandez",
+      "nation": "Argentina",
+      "xaPre": 0.6356,
+      "xgPre": 0.7647
+    },
+    "erlinghaaland|norway": {
+      "name": "Erling Haaland",
+      "nation": "Norway",
+      "xaPre": 0.3832,
+      "xgPre": 2.611
+    },
+    "federicovalverde|uruguay": {
+      "name": "Federico Valverde",
+      "nation": "Uruguay",
+      "xaPre": 0.4764,
+      "xgPre": 0.5486
+    },
+    "florianwirtz|germany": {
+      "name": "Florian Wirtz",
+      "nation": "Germany",
+      "xaPre": 1.0143,
+      "xgPre": 0.8984
+    },
+    "frenkiedejong|netherlands": {
+      "name": "Frenkie de Jong",
+      "nation": "Netherlands",
+      "xaPre": 0.2916,
+      "xgPre": 0.242
+    },
+    "gabriel|brazil": {
+      "name": "Gabriel",
+      "nation": "Brazil",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "gioreyna|usa": {
+      "name": "Gio Reyna",
+      "nation": "USA",
+      "xaPre": 0.2316,
+      "xgPre": 0.1577
+    },
+    "granitxhaka|switzerland": {
+      "name": "Granit Xhaka",
+      "nation": "Switzerland",
+      "xaPre": 0.3351,
+      "xgPre": 0.24
+    },
+    "harrykane|england": {
+      "name": "Harry Kane",
+      "nation": "England",
+      "xaPre": 0.5116,
+      "xgPre": 2.458
+    },
+    "harrysouttar|australia": {
+      "name": "Harry Souttar",
+      "nation": "Australia",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "ibrahimakonate|france": {
+      "name": "Ibrahima Konaté",
+      "nation": "France",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "jacksonirvine|australia": {
+      "name": "Jackson Irvine",
+      "nation": "Australia",
+      "xaPre": 0.163,
+      "xgPre": 0.2543
+    },
+    "jamalmusiala|germany": {
+      "name": "Jamal Musiala",
+      "nation": "Germany",
+      "xaPre": 0.6277,
+      "xgPre": 1.1306
+    },
+    "jamesrodriguez|colombia": {
+      "name": "James Rodríguez",
+      "nation": "Colombia",
+      "xaPre": 0.8842,
+      "xgPre": 0.3406
+    },
+    "jeffersonlerma|colombia": {
+      "name": "Jefferson Lerma",
+      "nation": "Colombia",
+      "xaPre": 0.1248,
+      "xgPre": 0.2108
+    },
+    "jeremydoku|belgium": {
+      "name": "Jérémy Doku",
+      "nation": "Belgium",
+      "xaPre": 0.7538,
+      "xgPre": 0.3955
+    },
+    "johnstones|england": {
+      "name": "John Stones",
+      "nation": "England",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "jonathandavid|canada": {
+      "name": "Jonathan David",
+      "nation": "Canada",
+      "xaPre": 0.3388,
+      "xgPre": 0.8216
+    },
+    "jonathantah|germany": {
+      "name": "Jonathan Tah",
+      "nation": "Germany",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "josegimenez|uruguay": {
+      "name": "José Giménez",
+      "nation": "Uruguay",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "joshuakimmich|germany": {
+      "name": "Joshua Kimmich",
+      "nation": "Germany",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "joskogvardiol|croatia": {
+      "name": "Joško Gvardiol",
+      "nation": "Croatia",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "judebellingham|england": {
+      "name": "Jude Bellingham",
+      "nation": "England",
+      "xaPre": 0.4127,
+      "xgPre": 0.7233
+    },
+    "julianalvarez|argentina": {
+      "name": "Julián Álvarez",
+      "nation": "Argentina",
+      "xaPre": 0.5555,
+      "xgPre": 1.5073
+    },
+    "jurrientimber|netherlands": {
+      "name": "Jurriën Timber",
+      "nation": "Netherlands",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "kaihavertz|germany": {
+      "name": "Kai Havertz",
+      "nation": "Germany",
+      "xaPre": 0.4326,
+      "xgPre": 1.7151
+    },
+    "kalidoukoulibaly|senegal": {
+      "name": "Kalidou Koulibaly",
+      "nation": "Senegal",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "kevindebruyne|belgium": {
+      "name": "Kevin De Bruyne",
+      "nation": "Belgium",
+      "xaPre": 0.7888,
+      "xgPre": 0.7
+    },
+    "koitakura|japan": {
+      "name": "Ko Itakura",
+      "nation": "Japan",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "kristofferajer|norway": {
+      "name": "Kristoffer Ajer",
+      "nation": "Norway",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "kylianmbappe|france": {
+      "name": "Kylian Mbappé",
+      "nation": "France",
+      "xaPre": 0.8606,
+      "xgPre": 2.6471
+    },
+    "lamineyamal|spain": {
+      "name": "Lamine Yamal",
+      "nation": "Spain",
+      "xaPre": 1.6875,
+      "xgPre": 1.3881
+    },
+    "lautaromartinez|argentina": {
+      "name": "Lautaro Martínez",
+      "nation": "Argentina",
+      "xaPre": 0.3845,
+      "xgPre": 2.2806
+    },
+    "leekangin|koreasouth": {
+      "name": "Lee Kang-In",
+      "nation": "Korea (South)",
+      "xaPre": 0.3589,
+      "xgPre": 0.1955
+    },
+    "lionelmessi|argentina": {
+      "name": "Lionel Messi",
+      "nation": "Argentina",
+      "xaPre": 1.6832,
+      "xgPre": 2.4222
+    },
+    "lisandromartinez|argentina": {
+      "name": "Lisandro Martínez",
+      "nation": "Argentina",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "lucaspaqueta|brazil": {
+      "name": "Lucas Paquetá",
+      "nation": "Brazil",
+      "xaPre": 0.4543,
+      "xgPre": 1.0476
+    },
+    "luisdiaz|colombia": {
+      "name": "Luis Díaz",
+      "nation": "Colombia",
+      "xaPre": 0.8116,
+      "xgPre": 1.3058
+    },
+    "lukamodric|croatia": {
+      "name": "Luka Modrić",
+      "nation": "Croatia",
+      "xaPre": 0.3745,
+      "xgPre": 0.2906
+    },
+    "manuelakanji|switzerland": {
+      "name": "Manuel Akanji",
+      "nation": "Switzerland",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "manuelugarte|uruguay": {
+      "name": "Manuel Ugarte",
+      "nation": "Uruguay",
+      "xaPre": 0.0754,
+      "xgPre": 0.1943
+    },
+    "marcguehi|england": {
+      "name": "Marc Guehi",
+      "nation": "England",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "marquinhos|brazil": {
+      "name": "Marquinhos",
+      "nation": "Brazil",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "martindegaard|norway": {
+      "name": "Martin Ødegaard",
+      "nation": "Norway",
+      "xaPre": 0.682,
+      "xgPre": 0.3365
+    },
+    "mateokovacic|croatia": {
+      "name": "Mateo Kovačić",
+      "nation": "Croatia",
+      "xaPre": 0.3567,
+      "xgPre": 0.298
+    },
+    "mehditaremi|iranislamicrepublicof": {
+      "name": "Mehdi Taremi",
+      "nation": "Iran, Islamic Republic of",
+      "xaPre": 0.2163,
+      "xgPre": 0.4461
+    },
+    "memphisdepay|netherlands": {
+      "name": "Memphis Depay",
+      "nation": "Netherlands",
+      "xaPre": 0.6578,
+      "xgPre": 0.9198
+    },
+    "michaelolise|france": {
+      "name": "Michael Olise",
+      "nation": "France",
+      "xaPre": 1.48,
+      "xgPre": 1.1524
+    },
+    "mikeloyarzabal|spain": {
+      "name": "Mikel Oyarzabal",
+      "nation": "Spain",
+      "xaPre": 0.4933,
+      "xgPre": 1.3292
+    },
+    "minjaekim|koreasouth": {
+      "name": "Min Jae Kim",
+      "nation": "Korea (South)",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "moisescaicedo|ecuador": {
+      "name": "Moisés Caicedo",
+      "nation": "Ecuador",
+      "xaPre": 0.2949,
+      "xgPre": 0.3179
+    },
+    "neymar|brazil": {
+      "name": "Neymar",
+      "nation": "Brazil",
+      "xaPre": 0.7881,
+      "xgPre": 1.5734
+    },
+    "nicolasjackson|senegal": {
+      "name": "Nicolas Jackson",
+      "nation": "Senegal",
+      "xaPre": 0.3893,
+      "xgPre": 1.1147
+    },
+    "nicowilliams|spain": {
+      "name": "Nico Williams",
+      "nation": "Spain",
+      "xaPre": 0.7839,
+      "xgPre": 0.7305
+    },
+    "nunomendes|portugal": {
+      "name": "Nuno Mendes",
+      "nation": "Portugal",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "orbelinpineda|mexico": {
+      "name": "Orbelín Pineda",
+      "nation": "Mexico",
+      "xaPre": 0.3569,
+      "xgPre": 0.5857
+    },
+    "ousmanedembele|france": {
+      "name": "Ousmane Dembélé",
+      "nation": "France",
+      "xaPre": 0.8092,
+      "xgPre": 1.147
+    },
+    "papesarr|senegal": {
+      "name": "Pape Sarr",
+      "nation": "Senegal",
+      "xaPre": 0.0783,
+      "xgPre": 0.2346
+    },
+    "paucubarsi|spain": {
+      "name": "Pau Cubarsí",
+      "nation": "Spain",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "pedri|spain": {
+      "name": "Pedri",
+      "nation": "Spain",
+      "xaPre": 0.7698,
+      "xgPre": 0.5749
+    },
+    "pierohincapie|ecuador": {
+      "name": "Piero Hincapié",
+      "nation": "Ecuador",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "rafaelleao|portugal": {
+      "name": "Rafael Leão",
+      "nation": "Portugal",
+      "xaPre": 0.4805,
+      "xgPre": 0.6182
+    },
+    "raphinha|brazil": {
+      "name": "Raphinha",
+      "nation": "Brazil",
+      "xaPre": 0.9085,
+      "xgPre": 1.1695
+    },
+    "rauljimenez|mexico": {
+      "name": "Raúl Jiménez",
+      "nation": "Mexico",
+      "xaPre": 0.1826,
+      "xgPre": 1.7734
+    },
+    "rodri|spain": {
+      "name": "Rodri",
+      "nation": "Spain",
+      "xaPre": 0.3312,
+      "xgPre": 0.3066
+    },
+    "romelulukaku|belgium": {
+      "name": "Romelu Lukaku",
+      "nation": "Belgium",
+      "xaPre": 0.3746,
+      "xgPre": 2.0334
+    },
+    "rubendias|portugal": {
+      "name": "Rúben Dias",
+      "nation": "Portugal",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "sadiomane|senegal": {
+      "name": "Sadio Mané",
+      "nation": "Senegal",
+      "xaPre": 0.5939,
+      "xgPre": 0.8799
+    },
+    "santiagogimenez|mexico": {
+      "name": "Santiago Giménez",
+      "nation": "Mexico",
+      "xaPre": 0.2042,
+      "xgPre": 1.0833
+    },
+    "sardarazmoun|iranislamicrepublicof": {
+      "name": "Sardar Azmoun",
+      "nation": "Iran, Islamic Republic of",
+      "xaPre": 0.2213,
+      "xgPre": 0.9437
+    },
+    "sofyanamrabat|morocco": {
+      "name": "Sofyan Amrabat",
+      "nation": "Morocco",
+      "xaPre": 0.1222,
+      "xgPre": 0.1389
+    },
+    "sonheungmin|koreasouth": {
+      "name": "Son Heung-Min",
+      "nation": "Korea (South)",
+      "xaPre": 0.3421,
+      "xgPre": 0.4328
+    },
+    "stephenantuneseustaquio|canada": {
+      "name": "Stephen Antunes Eustáquio",
+      "nation": "Canada",
+      "xaPre": 0.228,
+      "xgPre": 0.2731
+    },
+    "takefusakubo|japan": {
+      "name": "Takefusa Kubo",
+      "nation": "Japan",
+      "xaPre": 0.5432,
+      "xgPre": 0.2363
+    },
+    "tijjanireijnders|netherlands": {
+      "name": "Tijjani Reijnders",
+      "nation": "Netherlands",
+      "xaPre": 0.39,
+      "xgPre": 0.6767
+    },
+    "viniciusjunior|brazil": {
+      "name": "Vinícius Júnior",
+      "nation": "Brazil",
+      "xaPre": 0.9268,
+      "xgPre": 1.2921
+    },
+    "virgilvandijk|netherlands": {
+      "name": "Virgil van Dijk",
+      "nation": "Netherlands",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "vitinha|portugal": {
+      "name": "Vitinha",
+      "nation": "Portugal",
+      "xaPre": 0.445,
+      "xgPre": 0.3668
+    },
+    "wataruendo|japan": {
+      "name": "Wataru Endo",
+      "nation": "Japan",
+      "xaPre": 0.0718,
+      "xgPre": 0.0898
+    },
+    "westonmckennie|unitedstatesofamerica": {
+      "name": "Weston McKennie",
+      "nation": "United States of America",
+      "xaPre": 0.5558,
+      "xgPre": 0.5639
+    },
+    "williamsaliba|france": {
+      "name": "William Saliba",
+      "nation": "France",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "woutfaes|belgium": {
+      "name": "Wout Faes",
+      "nation": "Belgium",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "youssefennesyri|morocco": {
+      "name": "Youssef En-Nesyri",
+      "nation": "Morocco",
+      "xaPre": 0.1661,
+      "xgPre": 1.0571
+    }
+  },
+  "byStatsbomb": {
+    "10481": {
+      "name": "Aurélien Tchouaméni",
+      "nation": "France",
+      "xaPre": 0.2736,
+      "xgPre": 0.3814
+    },
+    "10595": {
+      "name": "Raphinha",
+      "nation": "Brazil",
+      "xaPre": 0.9085,
+      "xgPre": 1.1695
+    },
+    "10955": {
+      "name": "Harry Kane",
+      "nation": "England",
+      "xaPre": 0.5116,
+      "xgPre": 2.458
+    },
+    "11135": {
+      "name": "Ibrahima Konaté",
+      "nation": "France",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "11187": {
+      "name": "Stephen Antunes Eustáquio",
+      "nation": "Canada",
+      "xaPre": 0.228,
+      "xgPre": 0.2731
+    },
+    "11456": {
+      "name": "Lautaro Martínez",
+      "nation": "Argentina",
+      "xaPre": 0.3845,
+      "xgPre": 2.2806
+    },
+    "12365": {
+      "name": "Alphonso Davies",
+      "nation": "Canada",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "17592": {
+      "name": "William Saliba",
+      "nation": "France",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "18360": {
+      "name": "Rafael Leão",
+      "nation": "Portugal",
+      "xaPre": 0.4805,
+      "xgPre": 0.6182
+    },
+    "18395": {
+      "name": "Vinícius Júnior",
+      "nation": "Brazil",
+      "xaPre": 0.9268,
+      "xgPre": 1.2921
+    },
+    "20572": {
+      "name": "Cristian Romero",
+      "nation": "Argentina",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "20750": {
+      "name": "Cody Gakpo",
+      "nation": "Netherlands",
+      "xaPre": 0.8416,
+      "xgPre": 0.8758
+    },
+    "21582": {
+      "name": "Tijjani Reijnders",
+      "nation": "Netherlands",
+      "xaPre": 0.39,
+      "xgPre": 0.6767
+    },
+    "21809": {
+      "name": "Jurriën Timber",
+      "nation": "Netherlands",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "22084": {
+      "name": "Bukayo Saka",
+      "nation": "England",
+      "xaPre": 0.7075,
+      "xgPre": 0.6922
+    },
+    "22293": {
+      "name": "Harry Souttar",
+      "nation": "Australia",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "22600": {
+      "name": "Lucas Paquetá",
+      "nation": "Brazil",
+      "xaPre": 0.4543,
+      "xgPre": 1.0476
+    },
+    "22740": {
+      "name": "Lee Kang-In",
+      "nation": "Korea (South)",
+      "xaPre": 0.3589,
+      "xgPre": 0.1955
+    },
+    "23640": {
+      "name": "Jonathan David",
+      "nation": "Canada",
+      "xaPre": 0.3388,
+      "xgPre": 0.8216
+    },
+    "23650": {
+      "name": "Jérémy Doku",
+      "nation": "Belgium",
+      "xaPre": 0.7538,
+      "xgPre": 0.3955
+    },
+    "23721": {
+      "name": "Wataru Endo",
+      "nation": "Japan",
+      "xaPre": 0.0718,
+      "xgPre": 0.0898
+    },
+    "25142": {
+      "name": "Bruno Guimarães",
+      "nation": "Brazil",
+      "xaPre": 0.3917,
+      "xgPre": 0.5332
+    },
+    "26280": {
+      "name": "Orbelín Pineda",
+      "nation": "Mexico",
+      "xaPre": 0.3569,
+      "xgPre": 0.5857
+    },
+    "27158": {
+      "name": "Luis Díaz",
+      "nation": "Colombia",
+      "xaPre": 0.8116,
+      "xgPre": 1.3058
+    },
+    "27423": {
+      "name": "Daniel Muñoz",
+      "nation": "Colombia",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "27768": {
+      "name": "Lisandro Martínez",
+      "nation": "Argentina",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "28559": {
+      "name": "Enner Valencia",
+      "nation": "Ecuador",
+      "xaPre": 0.0964,
+      "xgPre": 0.4416
+    },
+    "29560": {
+      "name": "Julián Álvarez",
+      "nation": "Argentina",
+      "xaPre": 0.5555,
+      "xgPre": 1.5073
+    },
+    "29595": {
+      "name": "Ko Itakura",
+      "nation": "Japan",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "2988": {
+      "name": "Memphis Depay",
+      "nation": "Netherlands",
+      "xaPre": 0.6578,
+      "xgPre": 0.9198
+    },
+    "3009": {
+      "name": "Kylian Mbappé",
+      "nation": "France",
+      "xaPre": 0.8606,
+      "xgPre": 2.6471
+    },
+    "3026": {
+      "name": "Adrien Rabiot",
+      "nation": "France",
+      "xaPre": 0.5239,
+      "xgPre": 0.6985
+    },
+    "30486": {
+      "name": "Pedri",
+      "nation": "Spain",
+      "xaPre": 0.7698,
+      "xgPre": 0.5749
+    },
+    "30714": {
+      "name": "Jude Bellingham",
+      "nation": "England",
+      "xaPre": 0.4127,
+      "xgPre": 0.7233
+    },
+    "3083": {
+      "name": "Son Heung-Min",
+      "nation": "Korea (South)",
+      "xaPre": 0.3421,
+      "xgPre": 0.4328
+    },
+    "3089": {
+      "name": "Kevin De Bruyne",
+      "nation": "Belgium",
+      "xaPre": 0.7888,
+      "xgPre": 0.7
+    },
+    "31053": {
+      "name": "Santiago Giménez",
+      "nation": "Mexico",
+      "xaPre": 0.2042,
+      "xgPre": 1.0833
+    },
+    "31090": {
+      "name": "Takefusa Kubo",
+      "nation": "Japan",
+      "xaPre": 0.5432,
+      "xgPre": 0.2363
+    },
+    "316046": {
+      "name": "Lamine Yamal",
+      "nation": "Spain",
+      "xaPre": 1.6875,
+      "xgPre": 1.3881
+    },
+    "3167": {
+      "name": "Antonio Rüdiger",
+      "nation": "Germany",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "3244": {
+      "name": "John Stones",
+      "nation": "England",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "32478": {
+      "name": "Darwin Núñez",
+      "nation": "Uruguay",
+      "xaPre": 0.1926,
+      "xgPre": 0.7208
+    },
+    "3289": {
+      "name": "Romelu Lukaku",
+      "nation": "Belgium",
+      "xaPre": 0.3746,
+      "xgPre": 2.0334
+    },
+    "33018": {
+      "name": "Joško Gvardiol",
+      "nation": "Croatia",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "34526": {
+      "name": "Marc Guehi",
+      "nation": "England",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "34639": {
+      "name": "Vitinha",
+      "nation": "Portugal",
+      "xaPre": 0.445,
+      "xgPre": 0.3668
+    },
+    "3500": {
+      "name": "Granit Xhaka",
+      "nation": "Switzerland",
+      "xaPre": 0.3351,
+      "xgPre": 0.24
+    },
+    "3629": {
+      "name": "Sadio Mané",
+      "nation": "Senegal",
+      "xaPre": 0.5939,
+      "xgPre": 0.8799
+    },
+    "36659": {
+      "name": "Manuel Ugarte",
+      "nation": "Uruguay",
+      "xaPre": 0.0754,
+      "xgPre": 0.1943
+    },
+    "3669": {
+      "name": "Virgil van Dijk",
+      "nation": "Netherlands",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "37726": {
+      "name": "Moisés Caicedo",
+      "nation": "Ecuador",
+      "xaPre": 0.2949,
+      "xgPre": 0.3179
+    },
+    "38004": {
+      "name": "Piero Hincapié",
+      "nation": "Ecuador",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "38718": {
+      "name": "Enzo Fernandez",
+      "nation": "Argentina",
+      "xaPre": 0.6356,
+      "xgPre": 0.7647
+    },
+    "3943": {
+      "name": "Declan Rice",
+      "nation": "England",
+      "xaPre": 0.4328,
+      "xgPre": 0.4514
+    },
+    "39565": {
+      "name": "Jamal Musiala",
+      "nation": "Germany",
+      "xaPre": 0.6277,
+      "xgPre": 1.1306
+    },
+    "40724": {
+      "name": "Florian Wirtz",
+      "nation": "Germany",
+      "xaPre": 1.0143,
+      "xgPre": 0.8984
+    },
+    "41092": {
+      "name": "Nuno Mendes",
+      "nation": "Portugal",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "4320": {
+      "name": "Neymar",
+      "nation": "Brazil",
+      "xaPre": 0.7881,
+      "xgPre": 1.5734
+    },
+    "4353": {
+      "name": "Aymeric Laporte",
+      "nation": "Spain",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "43565": {
+      "name": "Min Jae Kim",
+      "nation": "Korea (South)",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "4372": {
+      "name": "Marquinhos",
+      "nation": "Brazil",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "4614": {
+      "name": "Antonee Robinson",
+      "nation": "United States of America",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "50497": {
+      "name": "Nicolas Jackson",
+      "nation": "Senegal",
+      "xaPre": 0.3893,
+      "xgPre": 1.1147
+    },
+    "50498": {
+      "name": "Pape Sarr",
+      "nation": "Senegal",
+      "xaPre": 0.0783,
+      "xgPre": 0.2346
+    },
+    "5204": {
+      "name": "Bruno Fernandes",
+      "nation": "Portugal",
+      "xaPre": 1.1308,
+      "xgPre": 1.0624
+    },
+    "5206": {
+      "name": "Rúben Dias",
+      "nation": "Portugal",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "5207": {
+      "name": "Cristiano Ronaldo",
+      "nation": "Portugal",
+      "xaPre": 0.5509,
+      "xgPre": 2.579
+    },
+    "5224": {
+      "name": "Sardar Azmoun",
+      "nation": "Iran, Islamic Republic of",
+      "xaPre": 0.2213,
+      "xgPre": 0.9437
+    },
+    "5226": {
+      "name": "Mehdi Taremi",
+      "nation": "Iran, Islamic Republic of",
+      "xaPre": 0.2163,
+      "xgPre": 0.4461
+    },
+    "5234": {
+      "name": "Sofyan Amrabat",
+      "nation": "Morocco",
+      "xaPre": 0.1222,
+      "xgPre": 0.1389
+    },
+    "5239": {
+      "name": "Alireza Jahanbakhsh",
+      "nation": "Iran, Islamic Republic of",
+      "xaPre": 0.1912,
+      "xgPre": 0.3004
+    },
+    "5245": {
+      "name": "Achraf Hakimi",
+      "nation": "Morocco",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "5259": {
+      "name": "José Giménez",
+      "nation": "Uruguay",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "5456": {
+      "name": "Mateo Kovačić",
+      "nation": "Croatia",
+      "xaPre": 0.3567,
+      "xgPre": 0.298
+    },
+    "5460": {
+      "name": "Andrej Kramarić",
+      "nation": "Croatia",
+      "xaPre": 0.4128,
+      "xgPre": 0.9659
+    },
+    "5463": {
+      "name": "Luka Modrić",
+      "nation": "Croatia",
+      "xaPre": 0.3745,
+      "xgPre": 0.2906
+    },
+    "5477": {
+      "name": "Ousmane Dembélé",
+      "nation": "France",
+      "xaPre": 0.8092,
+      "xgPre": 1.147
+    },
+    "5490": {
+      "name": "Jackson Irvine",
+      "nation": "Australia",
+      "xaPre": 0.163,
+      "xgPre": 0.2543
+    },
+    "5503": {
+      "name": "Lionel Messi",
+      "nation": "Argentina",
+      "xaPre": 1.6832,
+      "xgPre": 2.4222
+    },
+    "5545": {
+      "name": "Breel Embolo",
+      "nation": "Switzerland",
+      "xaPre": 0.3068,
+      "xgPre": 1.1185
+    },
+    "5549": {
+      "name": "Manuel Akanji",
+      "nation": "Switzerland",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "5567": {
+      "name": "Edson Álvarez",
+      "nation": "Mexico",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "5568": {
+      "name": "Raúl Jiménez",
+      "nation": "Mexico",
+      "xaPre": 0.1826,
+      "xgPre": 1.7734
+    },
+    "5579": {
+      "name": "Joshua Kimmich",
+      "nation": "Germany",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "5675": {
+      "name": "Kalidou Koulibaly",
+      "nation": "Senegal",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "5678": {
+      "name": "Jefferson Lerma",
+      "nation": "Colombia",
+      "xaPre": 0.1248,
+      "xgPre": 0.2108
+    },
+    "5695": {
+      "name": "James Rodríguez",
+      "nation": "Colombia",
+      "xaPre": 0.8842,
+      "xgPre": 0.3406
+    },
+    "6301": {
+      "name": "Youssef En-Nesyri",
+      "nation": "Morocco",
+      "xaPre": 0.1661,
+      "xgPre": 1.0571
+    },
+    "6406": {
+      "name": "Gabriel",
+      "nation": "Brazil",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "6685": {
+      "name": "Mikel Oyarzabal",
+      "nation": "Spain",
+      "xaPre": 0.4933,
+      "xgPre": 1.3292
+    },
+    "6765": {
+      "name": "Rodri",
+      "nation": "Spain",
+      "xaPre": 0.3312,
+      "xgPre": 0.3066
+    },
+    "6773": {
+      "name": "Federico Valverde",
+      "nation": "Uruguay",
+      "xaPre": 0.4764,
+      "xgPre": 0.5486
+    },
+    "68574": {
+      "name": "Nico Williams",
+      "nation": "Spain",
+      "xaPre": 0.7839,
+      "xgPre": 0.7305
+    },
+    "8118": {
+      "name": "Frenkie de Jong",
+      "nation": "Netherlands",
+      "xaPre": 0.2916,
+      "xgPre": 0.242
+    },
+    "8221": {
+      "name": "Jonathan Tah",
+      "nation": "Germany",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "8246": {
+      "name": "Christian Pulisic",
+      "nation": "United States of America",
+      "xaPre": 0.5792,
+      "xgPre": 0.7753
+    },
+    "8526": {
+      "name": "Weston McKennie",
+      "nation": "United States of America",
+      "xaPre": 0.5558,
+      "xgPre": 0.5639
+    },
+    "8854": {
+      "name": "Wout Faes",
+      "nation": "Belgium",
+      "xaPre": null,
+      "xgPre": 0.0
+    },
+    "8966": {
+      "name": "Kai Havertz",
+      "nation": "Germany",
+      "xaPre": 0.4326,
+      "xgPre": 1.7151
+    }
+  }
+}

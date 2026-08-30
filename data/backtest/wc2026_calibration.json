@@ -1,0 +1,1509 @@
+{
+  "generated_at": "2026-08-01T02:00:15.315609+00:00",
+  "description": "WC2026 full-tournament calibration backtest (Phase 3a). All numbers computed from the stored run snapshot; matches without a clean pre-match run are omitted, never imputed.",
+  "source": {
+    "cond0_run_id": "forecast__elo-dc-v1.0__seed42__cond0__rerun20260610",
+    "n_runs": 870,
+    "n_match_probabilities_rows": 90480,
+    "n_fixtures": 104,
+    "orientation": "match_results.home_score is team_a's score (fixed by match_id); KO rows additionally require winner_team in {team_a, team_b}.",
+    "ko_penalty_rule": "regulation score (home_score vs away_score); a shootout tie scores as a draw, shootout winner never re-labels the outcome.",
+    "join": "match -> latest model_prediction_runs.created_at < fixtures.kickoff_utc with a non-null match_probabilities row (B); cond0 run for A."
+  },
+  "coverage_summary": {
+    "group_total": 72,
+    "group_covered_A": 72,
+    "group_covered_B": 72,
+    "ko_total": 32,
+    "ko_covered_B": 32
+  },
+  "omitted": [],
+  "csv_reflects": "B_live_walkforward_all",
+  "analyses": {
+    "A_frozen_cond0_group": {
+      "n": 72,
+      "brier": 0.5457419864042375,
+      "log_loss": 0.920107968812603,
+      "top1": 0.5833333333333334,
+      "top2": 0.875,
+      "max_calibration_error": 0.708743108292299,
+      "reliability": {
+        "home_win": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 7,
+            "mean_pred": 0.16543997920346515,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 18,
+            "mean_pred": 0.25445354914993185,
+            "obs_freq": 0.2777777777777778
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 12,
+            "mean_pred": 0.34803480269852455,
+            "obs_freq": 0.5
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 12,
+            "mean_pred": 0.43615018741811706,
+            "obs_freq": 0.5833333333333334
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 15,
+            "mean_pred": 0.5481053318714307,
+            "obs_freq": 0.7333333333333333
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 7,
+            "mean_pred": 0.6483734134767444,
+            "obs_freq": 0.7142857142857143
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 1,
+            "mean_pred": 0.708743108292299,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ],
+        "draw": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 3,
+            "mean_pred": 0.19049861879008434,
+            "obs_freq": 0.3333333333333333
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 56,
+            "mean_pred": 0.2641030126850703,
+            "obs_freq": 0.25
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 13,
+            "mean_pred": 0.3210552098420747,
+            "obs_freq": 0.38461538461538464
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ],
+        "away_win": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 1,
+            "mean_pred": 0.0929330717248948,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 17,
+            "mean_pred": 0.15942699803557242,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 15,
+            "mean_pred": 0.2501471386957884,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 15,
+            "mean_pred": 0.35636819950209886,
+            "obs_freq": 0.13333333333333333
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 14,
+            "mean_pred": 0.4505225111171849,
+            "obs_freq": 0.5
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 8,
+            "mean_pred": 0.5448443099471341,
+            "obs_freq": 0.875
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 2,
+            "mean_pred": 0.6403126787897705,
+            "obs_freq": 1.0
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ]
+      },
+      "base_rate": [
+        0.4722222222222222,
+        0.2777777777777778,
+        0.25
+      ],
+      "baselines": {
+        "uniform": {
+          "p": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "brier": 0.6666666666666669,
+          "log_loss": 1.0986122886681098,
+          "brier_skill_score": 0.18138702039364396
+        },
+        "base_rate": {
+          "p": [
+            0.4722222222222222,
+            0.2777777777777778,
+            0.25
+          ],
+          "brier": 0.6373456790123457,
+          "log_loss": 1.0566995224860516,
+          "brier_skill_score": 0.1437268591042472
+        }
+      },
+      "coverage": [
+        "M001",
+        "M002",
+        "M003",
+        "M004",
+        "M005",
+        "M006",
+        "M007",
+        "M008",
+        "M009",
+        "M010",
+        "M011",
+        "M012",
+        "M013",
+        "M014",
+        "M015",
+        "M016",
+        "M017",
+        "M018",
+        "M019",
+        "M020",
+        "M021",
+        "M022",
+        "M023",
+        "M024",
+        "M025",
+        "M026",
+        "M027",
+        "M028",
+        "M029",
+        "M030",
+        "M031",
+        "M032",
+        "M033",
+        "M034",
+        "M035",
+        "M036",
+        "M037",
+        "M038",
+        "M039",
+        "M040",
+        "M041",
+        "M042",
+        "M043",
+        "M044",
+        "M045",
+        "M046",
+        "M047",
+        "M048",
+        "M049",
+        "M050",
+        "M051",
+        "M052",
+        "M053",
+        "M054",
+        "M055",
+        "M056",
+        "M057",
+        "M058",
+        "M059",
+        "M060",
+        "M061",
+        "M062",
+        "M063",
+        "M064",
+        "M065",
+        "M066",
+        "M067",
+        "M068",
+        "M069",
+        "M070",
+        "M071",
+        "M072"
+      ],
+      "n_covered": 72,
+      "run_ids": [
+        "forecast__elo-dc-v1.0__seed42__cond0__rerun20260610"
+      ]
+    },
+    "B_live_walkforward_group": {
+      "n": 72,
+      "brier": 0.5457419864042375,
+      "log_loss": 0.920107968812603,
+      "top1": 0.5833333333333334,
+      "top2": 0.875,
+      "max_calibration_error": 0.708743108292299,
+      "reliability": {
+        "home_win": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 7,
+            "mean_pred": 0.16543997920346515,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 18,
+            "mean_pred": 0.25445354914993185,
+            "obs_freq": 0.2777777777777778
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 12,
+            "mean_pred": 0.34803480269852455,
+            "obs_freq": 0.5
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 12,
+            "mean_pred": 0.43615018741811706,
+            "obs_freq": 0.5833333333333334
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 15,
+            "mean_pred": 0.5481053318714307,
+            "obs_freq": 0.7333333333333333
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 7,
+            "mean_pred": 0.6483734134767444,
+            "obs_freq": 0.7142857142857143
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 1,
+            "mean_pred": 0.708743108292299,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ],
+        "draw": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 3,
+            "mean_pred": 0.19049861879008434,
+            "obs_freq": 0.3333333333333333
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 56,
+            "mean_pred": 0.2641030126850703,
+            "obs_freq": 0.25
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 13,
+            "mean_pred": 0.3210552098420747,
+            "obs_freq": 0.38461538461538464
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ],
+        "away_win": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 1,
+            "mean_pred": 0.0929330717248948,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 17,
+            "mean_pred": 0.15942699803557242,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 15,
+            "mean_pred": 0.2501471386957884,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 15,
+            "mean_pred": 0.35636819950209886,
+            "obs_freq": 0.13333333333333333
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 14,
+            "mean_pred": 0.4505225111171849,
+            "obs_freq": 0.5
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 8,
+            "mean_pred": 0.5448443099471341,
+            "obs_freq": 0.875
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 2,
+            "mean_pred": 0.6403126787897705,
+            "obs_freq": 1.0
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ]
+      },
+      "base_rate": [
+        0.4722222222222222,
+        0.2777777777777778,
+        0.25
+      ],
+      "baselines": {
+        "uniform": {
+          "p": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "brier": 0.6666666666666669,
+          "log_loss": 1.0986122886681098,
+          "brier_skill_score": 0.18138702039364396
+        },
+        "base_rate": {
+          "p": [
+            0.4722222222222222,
+            0.2777777777777778,
+            0.25
+          ],
+          "brier": 0.6373456790123457,
+          "log_loss": 1.0566995224860516,
+          "brier_skill_score": 0.1437268591042472
+        }
+      },
+      "coverage": [
+        "M001",
+        "M002",
+        "M003",
+        "M004",
+        "M005",
+        "M006",
+        "M007",
+        "M008",
+        "M009",
+        "M010",
+        "M011",
+        "M012",
+        "M013",
+        "M014",
+        "M015",
+        "M016",
+        "M017",
+        "M018",
+        "M019",
+        "M020",
+        "M021",
+        "M022",
+        "M023",
+        "M024",
+        "M025",
+        "M026",
+        "M027",
+        "M028",
+        "M029",
+        "M030",
+        "M031",
+        "M032",
+        "M033",
+        "M034",
+        "M035",
+        "M036",
+        "M037",
+        "M038",
+        "M039",
+        "M040",
+        "M041",
+        "M042",
+        "M043",
+        "M044",
+        "M045",
+        "M046",
+        "M047",
+        "M048",
+        "M049",
+        "M050",
+        "M051",
+        "M052",
+        "M053",
+        "M054",
+        "M055",
+        "M056",
+        "M057",
+        "M058",
+        "M059",
+        "M060",
+        "M061",
+        "M062",
+        "M063",
+        "M064",
+        "M065",
+        "M066",
+        "M067",
+        "M068",
+        "M069",
+        "M070",
+        "M071",
+        "M072"
+      ],
+      "n_covered": 72,
+      "run_ids": [
+        "forecast__elo-dc-v1.0__seed42__cond0__rerun20260610",
+        "live__20260611T233336Z__cond1__seed42",
+        "live__20260613T090921Z__cond4__seed42",
+        "live__20260614T004045Z__cond6__seed42",
+        "live__20260614T152526Z__cond6__seed42",
+        "live__20260614T175641Z__cond7__seed42",
+        "live__20260614T214903Z__cond7__seed42",
+        "live__20260614T234338Z__cond7__seed42",
+        "live__20260615T124937Z__cond7__seed42",
+        "live__20260615T184310Z__cond13__seed42",
+        "live__20260615T213113Z__cond13__seed42",
+        "live__20260616T000908Z__cond13__seed42",
+        "live__20260616T172900Z__cond16__seed42",
+        "live__20260616T215041Z__cond17__seed42",
+        "live__20260617T000424Z__cond18__seed42",
+        "live__20260617T143808Z__cond20__seed42",
+        "live__20260617T180342Z__cond20__seed42",
+        "live__20260617T225710Z__cond20__seed42",
+        "live__20260618T014845Z__cond20__seed42",
+        "live__20260618T155933Z__cond24__seed42",
+        "live__20260618T184003Z__cond24__seed42",
+        "live__20260618T213453Z__cond24__seed42",
+        "live__20260619T004558Z__cond27__seed42",
+        "live__20260619T173124Z__cond27__seed42",
+        "live__20260619T214149Z__cond27__seed42",
+        "live__20260619T233520Z__cond29__seed42",
+        "live__20260620T013940Z__cond30__seed42",
+        "live__20260620T165844Z__cond32__seed42",
+        "live__20260620T185310Z__cond32__seed42",
+        "live__20260620T224045Z__cond34__seed42",
+        "live__20260621T014548Z__cond34__seed42",
+        "live__20260621T155220Z__cond36__seed42",
+        "live__20260621T185258Z__cond37__seed42",
+        "live__20260621T215854Z__cond38__seed42",
+        "live__20260622T005225Z__cond39__seed42",
+        "live__20260622T165251Z__cond40__seed42",
+        "live__20260622T205209Z__cond41__seed42",
+        "live__20260622T233829Z__cond41__seed42",
+        "live__20260623T024217Z__cond43__seed42",
+        "live__20260623T165552Z__cond44__seed42",
+        "live__20260623T195221Z__cond45__seed42",
+        "live__20260623T225159Z__cond46__seed42",
+        "live__20260624T015239Z__cond47__seed42",
+        "live__20260624T185239Z__cond48__seed42",
+        "live__20260624T215324Z__cond50__seed42",
+        "live__20260625T005210Z__cond50__seed42",
+        "live__20260625T195200Z__cond54__seed42",
+        "live__20260625T225452Z__cond56__seed42",
+        "live__20260626T015202Z__cond58__seed42",
+        "live__20260626T185155Z__cond60__seed42",
+        "live__20260626T235217Z__cond62__seed42",
+        "live__20260627T025214Z__cond63__seed42",
+        "live__20260627T205208Z__cond66__seed42",
+        "live__20260627T231208Z__cond68__seed42",
+        "live__20260628T015145Z__cond70__seed42"
+      ]
+    },
+    "B_live_walkforward_ko": {
+      "n": 32,
+      "brier": 0.48855021390675707,
+      "log_loss": 0.8480211500138422,
+      "top1": 0.78125,
+      "top2": 0.875,
+      "max_calibration_error": 0.48627691431952247,
+      "reliability": {
+        "home_win": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 1,
+            "mean_pred": 0.192159605941585,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 5,
+            "mean_pred": 0.25966583573531105,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 8,
+            "mean_pred": 0.34347487192823073,
+            "obs_freq": 0.125
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 8,
+            "mean_pred": 0.4263396319749714,
+            "obs_freq": 0.75
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 7,
+            "mean_pred": 0.5501768685199356,
+            "obs_freq": 0.8571428571428571
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 3,
+            "mean_pred": 0.6316914085533497,
+            "obs_freq": 1.0
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ],
+        "draw": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 25,
+            "mean_pred": 0.2637698329160504,
+            "obs_freq": 0.08
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 7,
+            "mean_pred": 0.3112931326037868,
+            "obs_freq": 0.2857142857142857
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ],
+        "away_win": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 1,
+            "mean_pred": 0.0978534656059413,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 6,
+            "mean_pred": 0.1644509480888495,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 9,
+            "mean_pred": 0.2592614262514787,
+            "obs_freq": 0.2222222222222222
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 7,
+            "mean_pred": 0.3373104690594641,
+            "obs_freq": 0.2857142857142857
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 7,
+            "mean_pred": 0.43212195464990355,
+            "obs_freq": 0.8571428571428571
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 2,
+            "mean_pred": 0.5137230856804775,
+            "obs_freq": 1.0
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ]
+      },
+      "base_rate": [
+        0.5,
+        0.125,
+        0.375
+      ],
+      "baselines": {
+        "uniform": {
+          "p": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "brier": 0.6666666666666667,
+          "log_loss": 1.0986122886681098,
+          "brier_skill_score": 0.2671746791398645
+        },
+        "base_rate": {
+          "p": [
+            0.5,
+            0.125,
+            0.375
+          ],
+          "brier": 0.59375,
+          "log_loss": 0.9743147528693494,
+          "brier_skill_score": 0.17717858710440915
+        }
+      },
+      "coverage": [
+        "M073",
+        "M074",
+        "M075",
+        "M076",
+        "M077",
+        "M078",
+        "M079",
+        "M080",
+        "M081",
+        "M082",
+        "M083",
+        "M084",
+        "M085",
+        "M086",
+        "M087",
+        "M088",
+        "M089",
+        "M090",
+        "M091",
+        "M092",
+        "M093",
+        "M094",
+        "M095",
+        "M096",
+        "M097",
+        "M098",
+        "M099",
+        "M100",
+        "M101",
+        "M102",
+        "M103",
+        "M104"
+      ],
+      "n_covered": 32,
+      "run_ids": [
+        "live__20260628T184202Z__cond72__seed42",
+        "live__20260629T165203Z__cond72__seed42",
+        "live__20260629T202735Z__cond72__seed42",
+        "live__20260630T004715Z__cond72__seed42",
+        "live__20260630T165132Z__cond76__seed42",
+        "live__20260630T205151Z__cond77__seed42",
+        "live__20260701T005145Z__cond78__seed42",
+        "live__20260701T155129Z__cond79__seed42",
+        "live__20260701T195143Z__cond80__seed42",
+        "live__20260701T235116Z__cond81__seed42",
+        "live__20260702T185150Z__cond82__seed42",
+        "live__20260702T225145Z__cond83__seed42",
+        "live__20260703T025122Z__cond84__seed42",
+        "live__20260703T175133Z__cond85__seed42",
+        "live__20260703T215128Z__cond86__seed42",
+        "live__20260704T012118Z__cond87__seed42",
+        "live__20260704T165124Z__cond88__seed42",
+        "live__20260704T205119Z__cond88__seed42",
+        "live__20260705T175124Z__cond88__seed42",
+        "live__20260706T031120Z__cond92__seed42",
+        "live__20260706T211125Z__cond93__seed42",
+        "live__20260707T020115Z__cond94__seed42",
+        "live__20260707T181120Z__cond95__seed42",
+        "live__20260707T230114Z__cond96__seed42",
+        "live__20260709T221104Z__cond97__seed42",
+        "live__20260710T211104Z__cond98__seed42",
+        "live__20260712T000101Z__cond99__seed42",
+        "live__20260712T040103Z__cond100__seed42",
+        "live__20260714T211102Z__cond101__seed42",
+        "live__20260715T211102Z__cond102__seed42",
+        "live__20260718T231109Z__cond103__seed42"
+      ]
+    },
+    "B_live_walkforward_all": {
+      "n": 104,
+      "brier": 0.5281445179434743,
+      "log_loss": 0.897927409182215,
+      "top1": 0.6442307692307693,
+      "top2": 0.875,
+      "max_calibration_error": 0.708743108292299,
+      "reliability": {
+        "home_win": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 8,
+            "mean_pred": 0.16877993254573015,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 23,
+            "mean_pred": 0.25558665492936206,
+            "obs_freq": 0.21739130434782608
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 20,
+            "mean_pred": 0.34621083039040706,
+            "obs_freq": 0.35
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 20,
+            "mean_pred": 0.4322259652408588,
+            "obs_freq": 0.65
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 22,
+            "mean_pred": 0.5487644571686823,
+            "obs_freq": 0.7727272727272727
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 10,
+            "mean_pred": 0.6433688119997258,
+            "obs_freq": 0.8
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 1,
+            "mean_pred": 0.708743108292299,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ],
+        "draw": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 3,
+            "mean_pred": 0.19049861879008434,
+            "obs_freq": 0.3333333333333333
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 81,
+            "mean_pred": 0.2640001794230271,
+            "obs_freq": 0.19753086419753085
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 20,
+            "mean_pred": 0.317638482808674,
+            "obs_freq": 0.35
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ],
+        "away_win": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.1,
+            "n": 2,
+            "mean_pred": 0.09539326866541806,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.1,
+            "bin_high": 0.2,
+            "n": 23,
+            "mean_pred": 0.1607375937016447,
+            "obs_freq": 0.0
+          },
+          {
+            "bin_low": 0.2,
+            "bin_high": 0.3,
+            "n": 24,
+            "mean_pred": 0.25356499652917225,
+            "obs_freq": 0.08333333333333333
+          },
+          {
+            "bin_low": 0.3,
+            "bin_high": 0.4,
+            "n": 22,
+            "mean_pred": 0.3503043761794423,
+            "obs_freq": 0.18181818181818182
+          },
+          {
+            "bin_low": 0.4,
+            "bin_high": 0.5,
+            "n": 21,
+            "mean_pred": 0.44438899229475787,
+            "obs_freq": 0.6190476190476191
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.6,
+            "n": 10,
+            "mean_pred": 0.5386200650938028,
+            "obs_freq": 0.9
+          },
+          {
+            "bin_low": 0.6,
+            "bin_high": 0.7,
+            "n": 2,
+            "mean_pred": 0.6403126787897705,
+            "obs_freq": 1.0
+          },
+          {
+            "bin_low": 0.7,
+            "bin_high": 0.8,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.8,
+            "bin_high": 0.9,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          },
+          {
+            "bin_low": 0.9,
+            "bin_high": 1.0,
+            "n": 0,
+            "mean_pred": null,
+            "obs_freq": null
+          }
+        ]
+      },
+      "base_rate": [
+        0.4807692307692308,
+        0.23076923076923078,
+        0.28846153846153844
+      ],
+      "baselines": {
+        "uniform": {
+          "p": [
+            0.3333333333333333,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "brier": 0.6666666666666667,
+          "log_loss": 1.0986122886681096,
+          "brier_skill_score": 0.2077832230847887
+        },
+        "base_rate": {
+          "p": [
+            0.4807692307692308,
+            0.23076923076923078,
+            0.28846153846153844
+          ],
+          "brier": 0.6323964497041418,
+          "log_loss": 1.0490989409719238,
+          "brier_skill_score": 0.16485217747417835
+        }
+      },
+      "coverage": [
+        "M001",
+        "M002",
+        "M003",
+        "M004",
+        "M005",
+        "M006",
+        "M007",
+        "M008",
+        "M009",
+        "M010",
+        "M011",
+        "M012",
+        "M013",
+        "M014",
+        "M015",
+        "M016",
+        "M017",
+        "M018",
+        "M019",
+        "M020",
+        "M021",
+        "M022",
+        "M023",
+        "M024",
+        "M025",
+        "M026",
+        "M027",
+        "M028",
+        "M029",
+        "M030",
+        "M031",
+        "M032",
+        "M033",
+        "M034",
+        "M035",
+        "M036",
+        "M037",
+        "M038",
+        "M039",
+        "M040",
+        "M041",
+        "M042",
+        "M043",
+        "M044",
+        "M045",
+        "M046",
+        "M047",
+        "M048",
+        "M049",
+        "M050",
+        "M051",
+        "M052",
+        "M053",
+        "M054",
+        "M055",
+        "M056",
+        "M057",
+        "M058",
+        "M059",
+        "M060",
+        "M061",
+        "M062",
+        "M063",
+        "M064",
+        "M065",
+        "M066",
+        "M067",
+        "M068",
+        "M069",
+        "M070",
+        "M071",
+        "M072",
+        "M073",
+        "M074",
+        "M075",
+        "M076",
+        "M077",
+        "M078",
+        "M079",
+        "M080",
+        "M081",
+        "M082",
+        "M083",
+        "M084",
+        "M085",
+        "M086",
+        "M087",
+        "M088",
+        "M089",
+        "M090",
+        "M091",
+        "M092",
+        "M093",
+        "M094",
+        "M095",
+        "M096",
+        "M097",
+        "M098",
+        "M099",
+        "M100",
+        "M101",
+        "M102",
+        "M103",
+        "M104"
+      ],
+      "n_covered": 104,
+      "run_ids": [
+        "forecast__elo-dc-v1.0__seed42__cond0__rerun20260610",
+        "live__20260611T233336Z__cond1__seed42",
+        "live__20260613T090921Z__cond4__seed42",
+        "live__20260614T004045Z__cond6__seed42",
+        "live__20260614T152526Z__cond6__seed42",
+        "live__20260614T175641Z__cond7__seed42",
+        "live__20260614T214903Z__cond7__seed42",
+        "live__20260614T234338Z__cond7__seed42",
+        "live__20260615T124937Z__cond7__seed42",
+        "live__20260615T184310Z__cond13__seed42",
+        "live__20260615T213113Z__cond13__seed42",
+        "live__20260616T000908Z__cond13__seed42",
+        "live__20260616T172900Z__cond16__seed42",
+        "live__20260616T215041Z__cond17__seed42",
+        "live__20260617T000424Z__cond18__seed42",
+        "live__20260617T143808Z__cond20__seed42",
+        "live__20260617T180342Z__cond20__seed42",
+        "live__20260617T225710Z__cond20__seed42",
+        "live__20260618T014845Z__cond20__seed42",
+        "live__20260618T155933Z__cond24__seed42",
+        "live__20260618T184003Z__cond24__seed42",
+        "live__20260618T213453Z__cond24__seed42",
+        "live__20260619T004558Z__cond27__seed42",
+        "live__20260619T173124Z__cond27__seed42",
+        "live__20260619T214149Z__cond27__seed42",
+        "live__20260619T233520Z__cond29__seed42",
+        "live__20260620T013940Z__cond30__seed42",
+        "live__20260620T165844Z__cond32__seed42",
+        "live__20260620T185310Z__cond32__seed42",
+        "live__20260620T224045Z__cond34__seed42",
+        "live__20260621T014548Z__cond34__seed42",
+        "live__20260621T155220Z__cond36__seed42",
+        "live__20260621T185258Z__cond37__seed42",
+        "live__20260621T215854Z__cond38__seed42",
+        "live__20260622T005225Z__cond39__seed42",
+        "live__20260622T165251Z__cond40__seed42",
+        "live__20260622T205209Z__cond41__seed42",
+        "live__20260622T233829Z__cond41__seed42",
+        "live__20260623T024217Z__cond43__seed42",
+        "live__20260623T165552Z__cond44__seed42",
+        "live__20260623T195221Z__cond45__seed42",
+        "live__20260623T225159Z__cond46__seed42",
+        "live__20260624T015239Z__cond47__seed42",
+        "live__20260624T185239Z__cond48__seed42",
+        "live__20260624T215324Z__cond50__seed42",
+        "live__20260625T005210Z__cond50__seed42",
+        "live__20260625T195200Z__cond54__seed42",
+        "live__20260625T225452Z__cond56__seed42",
+        "live__20260626T015202Z__cond58__seed42",
+        "live__20260626T185155Z__cond60__seed42",
+        "live__20260626T235217Z__cond62__seed42",
+        "live__20260627T025214Z__cond63__seed42",
+        "live__20260627T205208Z__cond66__seed42",
+        "live__20260627T231208Z__cond68__seed42",
+        "live__20260628T015145Z__cond70__seed42",
+        "live__20260628T184202Z__cond72__seed42",
+        "live__20260629T165203Z__cond72__seed42",
+        "live__20260629T202735Z__cond72__seed42",
+        "live__20260630T004715Z__cond72__seed42",
+        "live__20260630T165132Z__cond76__seed42",
+        "live__20260630T205151Z__cond77__seed42",
+        "live__20260701T005145Z__cond78__seed42",
+        "live__20260701T155129Z__cond79__seed42",
+        "live__20260701T195143Z__cond80__seed42",
+        "live__20260701T235116Z__cond81__seed42",
+        "live__20260702T185150Z__cond82__seed42",
+        "live__20260702T225145Z__cond83__seed42",
+        "live__20260703T025122Z__cond84__seed42",
+        "live__20260703T175133Z__cond85__seed42",
+        "live__20260703T215128Z__cond86__seed42",
+        "live__20260704T012118Z__cond87__seed42",
+        "live__20260704T165124Z__cond88__seed42",
+        "live__20260704T205119Z__cond88__seed42",
+        "live__20260705T175124Z__cond88__seed42",
+        "live__20260706T031120Z__cond92__seed42",
+        "live__20260706T211125Z__cond93__seed42",
+        "live__20260707T020115Z__cond94__seed42",
+        "live__20260707T181120Z__cond95__seed42",
+        "live__20260707T230114Z__cond96__seed42",
+        "live__20260709T221104Z__cond97__seed42",
+        "live__20260710T211104Z__cond98__seed42",
+        "live__20260712T000101Z__cond99__seed42",
+        "live__20260712T040103Z__cond100__seed42",
+        "live__20260714T211102Z__cond101__seed42",
+        "live__20260715T211102Z__cond102__seed42",
+        "live__20260718T231109Z__cond103__seed42"
+      ]
+    }
+  }
+}

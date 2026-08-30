@@ -1,0 +1,14 @@
+{
+  "method": "none",
+  "reason": "isotonic worsens 2022 Brier +2.3% (small-window overfit); Platt is net-neutral on Brier but degrades log loss on both 2018 and 2022 with no calibration gain. Raw model accepted as acceptably calibrated.",
+  "evaluated": {
+    "platt": {
+      "2018_brier_delta_pct": 0.5,
+      "2022_brier_delta_pct": -0.3
+    },
+    "isotonic": {
+      "2018_brier_delta_pct": 0.3,
+      "2022_brier_delta_pct": 2.3
+    }
+  }
+}

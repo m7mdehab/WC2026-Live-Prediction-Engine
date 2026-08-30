@@ -1,0 +1,61 @@
+{
+  "source": {
+    "name": "martj42/international_results",
+    "url": "https://github.com/martj42/international_results",
+    "git_commit": "6b6f8e9f321414957cc17861d8c2dbf25c4437b0",
+    "results_csv_sha256": "ee6953cd4cd6d943ecee67f719238e4377be62736c25aa8be092f484bbb2c0d1",
+    "cloned_into": "data/raw/international_results/ (gitignored)"
+  },
+  "cleaned_output": "data/historical_results_clean.csv",
+  "run_date": "2026-06-10",
+  "training_cutoff_date": "2026-06-10",
+  "counts": {
+    "raw_rows": 49450,
+    "dropped_unplayed_NA": 72,
+    "dropped_future_played": 0,
+    "dropped_unparseable_date": 0,
+    "clean_rows": 49378,
+    "by_tier": {
+      "1": 964,
+      "2": 3391,
+      "3": 8771,
+      "4": 8231,
+      "5": 28021
+    },
+    "by_category": {
+      "friendly": 18426,
+      "minor_tournament": 9423,
+      "wc_qualifier": 8771,
+      "continental_qualifier": 7083,
+      "continental_finals": 3251,
+      "nations_league": 1080,
+      "wc_finals": 964,
+      "non_fifa": 172,
+      "confederations_cup": 140,
+      "nations_league_qualifier": 68
+    }
+  },
+  "tier_weights": {
+    "1": 1.0,
+    "2": 0.85,
+    "3": 0.7,
+    "4": 0.55,
+    "5": 0.2
+  },
+  "tier_note": "Continental-championship qualifiers placed in Tier 4 (competitive-secondary), a deliberate extension of the spec's tier-4 definition; flagged for Phase 2 review. Weights are STARTING values; Phase 2.4 backtests + grid-searches them.",
+  "latest_clean_match_date": "2026-06-08",
+  "unplayed_fixtures_in_source": 72,
+  "reproducibility_metadata": {
+    "model_version": null,
+    "simulator_version": null,
+    "code_version": "eb5dc41022581fdc1c63bf702ec7482c3a082572",
+    "git_commit": "eb5dc41022581fdc1c63bf702ec7482c3a082572",
+    "data_version": "2026-06-10",
+    "data_hash": "ee6953cd4cd6d943ecee67f719238e4377be62736c25aa8be092f484bbb2c0d1",
+    "rng_seed": null,
+    "training_cutoff_date": "2026-06-10",
+    "data_cutoff_time": null,
+    "calibration_method": null,
+    "run_type": "data_build"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "source": "FIFA. Regulations for the FIFA World Cup 26. Articles 12.6-12.11.",
+    "source_url_primary": "https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf",
+    "cross_check": "Wikipedia 2026_FIFA_World_Cup_knockout_stage",
+    "captured_on": "2026-06-02",
+    "slot_notation": {
+      "1X": "Winner of Group X",
+      "2X": "Runner-up of Group X",
+      "3X": "Third-placed team of Group X",
+      "best3_of_XYZ": "Best third-placed team among groups X, Y, Z (resolved via Annex C / 495-combination matrix)",
+      "WnnM": "Winner of Match nn"
+    },
+    "match_numbering_convention": "Match numbers M01-M72 are group-stage. M73-M88 are R32. M89-M96 are R16. M97-M100 are QF. M101-M102 are SF. M103 is third-place playoff. M104 is the Final.",
+    "warning": "Same-group teams shall not meet in the Round of 32. The Annex C matrix is constructed so this constraint always holds. Verify when implementing the matrix."
+  },
+
+  "round_of_32": [
+    {"match_id": "M73", "bracket_position": 1, "team_a": "2A", "team_b": "2B"},
+    {"match_id": "M74", "bracket_position": 2, "team_a": "1E", "team_b": "best3_of_ABCDF"},
+    {"match_id": "M75", "bracket_position": 3, "team_a": "1F", "team_b": "2C"},
+    {"match_id": "M76", "bracket_position": 4, "team_a": "1C", "team_b": "2F"},
+    {"match_id": "M77", "bracket_position": 5, "team_a": "1I", "team_b": "best3_of_CDFGH"},
+    {"match_id": "M78", "bracket_position": 6, "team_a": "2E", "team_b": "2I"},
+    {"match_id": "M79", "bracket_position": 7, "team_a": "1A", "team_b": "best3_of_CEFHI"},
+    {"match_id": "M80", "bracket_position": 8, "team_a": "1L", "team_b": "best3_of_EHIJK"},
+    {"match_id": "M81", "bracket_position": 9, "team_a": "1D", "team_b": "best3_of_BEFIJ"},
+    {"match_id": "M82", "bracket_position": 10, "team_a": "1G", "team_b": "best3_of_AEHIJ"},
+    {"match_id": "M83", "bracket_position": 11, "team_a": "2K", "team_b": "2L"},
+    {"match_id": "M84", "bracket_position": 12, "team_a": "1H", "team_b": "2J"},
+    {"match_id": "M85", "bracket_position": 13, "team_a": "1B", "team_b": "best3_of_EFGIJ"},
+    {"match_id": "M86", "bracket_position": 14, "team_a": "1J", "team_b": "2H"},
+    {"match_id": "M87", "bracket_position": 15, "team_a": "1K", "team_b": "best3_of_DEIJL"},
+    {"match_id": "M88", "bracket_position": 16, "team_a": "2D", "team_b": "2G"}
+  ],
+
+  "round_of_16": [
+    {"match_id": "M89", "team_a": "W74", "team_b": "W77", "bracket_pos": "(2)v(5)"},
+    {"match_id": "M90", "team_a": "W73", "team_b": "W75", "bracket_pos": "(1)v(3)"},
+    {"match_id": "M91", "team_a": "W76", "team_b": "W78", "bracket_pos": "(4)v(6)"},
+    {"match_id": "M92", "team_a": "W79", "team_b": "W80", "bracket_pos": "(7)v(8)"},
+    {"match_id": "M93", "team_a": "W83", "team_b": "W84", "bracket_pos": "(11)v(12)"},
+    {"match_id": "M94", "team_a": "W81", "team_b": "W82", "bracket_pos": "(9)v(10)"},
+    {"match_id": "M95", "team_a": "W86", "team_b": "W88", "bracket_pos": "(14)v(16)"},
+    {"match_id": "M96", "team_a": "W85", "team_b": "W87", "bracket_pos": "(13)v(15)"}
+  ],
+
+  "quarter_finals": [
+    {"match_id": "M97", "qf_label": "A", "team_a": "W89", "team_b": "W90"},
+    {"match_id": "M98", "qf_label": "B", "team_a": "W93", "team_b": "W94"},
+    {"match_id": "M99", "qf_label": "C", "team_a": "W91", "team_b": "W92"},
+    {"match_id": "M100", "qf_label": "D", "team_a": "W95", "team_b": "W96"}
+  ],
+
+  "semi_finals": [
+    {"match_id": "M101", "sf_label": "SF1", "team_a": "W97", "team_b": "W98"},
+    {"match_id": "M102", "sf_label": "SF2", "team_a": "W99", "team_b": "W100"}
+  ],
+
+  "third_place_playoff": {
+    "match_id": "M103",
+    "team_a": "L101 (semi-final 1 loser)",
+    "team_b": "L102 (semi-final 2 loser)"
+  },
+
+  "final": {
+    "match_id": "M104",
+    "team_a": "W101 (semi-final 1 winner)",
+    "team_b": "W102 (semi-final 2 winner)",
+    "venue": "MetLife Stadium, East Rutherford, New Jersey, USA",
+    "date": "2026-07-19"
+  },
+
+  "bracket_topology_notes": {
+    "two_halves_design": "The bracket has two halves preventing the two highest-ranked teams from meeting before the final if they win their groups. This is a 2026 change.",
+    "sf_feeder_note": "The two halves are the SF-feeder subtrees, not the M73-M80 / M81-M88 number bands: SF1 (M101) = W97 v W98 and SF2 (M102) = W99 v W100, each interleaving a quarter-final from the nominal upper and lower bands. The W## edges above are authoritative (confirmed against the official-regulations bracket); these arrays are derived from them.",
+    "sf1_side_r32_matches": [73, 74, 75, 77, 81, 82, 83, 84],
+    "sf2_side_r32_matches": [76, 78, 79, 80, 85, 86, 87, 88],
+    "verification_check": "Every group's winner and runner-up must appear in exactly one R32 slot. Best-8 third-placed teams must fill the remaining slots. No same-group teams in any R32 match."
+  }
+}

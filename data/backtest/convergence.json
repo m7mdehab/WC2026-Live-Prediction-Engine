@@ -1,0 +1,31 @@
+{
+  "seed": 42,
+  "iters": [
+    10000,
+    50000
+  ],
+  "max_delta_pp": 0.634,
+  "top_deltas": [
+    {
+      "team": "Spain",
+      "p10k": 10.45,
+      "p50k": 11.084,
+      "delta_pp": 0.634
+    },
+    {
+      "team": "Brazil",
+      "p10k": 7.31,
+      "p50k": 6.976,
+      "delta_pp": 0.334
+    },
+    {
+      "team": "Mexico",
+      "p10k": 3.83,
+      "p50k": 3.528,
+      "delta_pp": 0.302
+    }
+  ],
+  "target_pp": 0.5,
+  "pass": false,
+  "note": "Only the top team (Spain) exceeds 0.5pp; MC noise. Remedy: production run 50k iters (published forecast runs at 50,000)."
+}

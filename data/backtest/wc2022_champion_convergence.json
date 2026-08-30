@@ -1,0 +1,237 @@
+{
+  "year": "2022",
+  "opener": "2022-11-20",
+  "fit_max_date": "2022-11-20",
+  "host": "Qatar",
+  "seed": 42,
+  "iters": 50000,
+  "config": {
+    "half_life": 1460.0,
+    "lambda_prior": 20.0,
+    "tiers": {
+      "1": 1.1,
+      "2": 0.75,
+      "3": 0.6,
+      "4": 0.45,
+      "5": 0.3
+    }
+  },
+  "eventual_champion": "Argentina",
+  "stages": [
+    {
+      "stage": "pre",
+      "label": "Round of 16",
+      "remaining_teams": 16,
+      "fixed_matches": [],
+      "champion": {
+        "team": "Argentina",
+        "rank_among_remaining": 2,
+        "champion_pct": 12.94
+      },
+      "remaining_top": [
+        {
+          "rank": 1,
+          "team": "Brazil",
+          "champion_pct": 19.34
+        },
+        {
+          "rank": 2,
+          "team": "Argentina",
+          "champion_pct": 12.94
+        },
+        {
+          "rank": 3,
+          "team": "Spain",
+          "champion_pct": 11.6
+        },
+        {
+          "rank": 4,
+          "team": "France",
+          "champion_pct": 10.43
+        },
+        {
+          "rank": 5,
+          "team": "England",
+          "champion_pct": 7.81
+        },
+        {
+          "rank": 6,
+          "team": "Portugal",
+          "champion_pct": 7.63
+        },
+        {
+          "rank": 7,
+          "team": "Netherlands",
+          "champion_pct": 7.12
+        },
+        {
+          "rank": 8,
+          "team": "Croatia",
+          "champion_pct": 3.63
+        }
+      ]
+    },
+    {
+      "stage": "post_r16",
+      "label": "Quarter-finals",
+      "remaining_teams": 8,
+      "fixed_matches": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "r8"
+      ],
+      "champion": {
+        "team": "Argentina",
+        "rank_among_remaining": 2,
+        "champion_pct": 16.31
+      },
+      "remaining_top": [
+        {
+          "rank": 1,
+          "team": "Brazil",
+          "champion_pct": 25.32
+        },
+        {
+          "rank": 2,
+          "team": "Argentina",
+          "champion_pct": 16.31
+        },
+        {
+          "rank": 3,
+          "team": "France",
+          "champion_pct": 14.13
+        },
+        {
+          "rank": 4,
+          "team": "Portugal",
+          "champion_pct": 13.38
+        },
+        {
+          "rank": 5,
+          "team": "England",
+          "champion_pct": 11.36
+        },
+        {
+          "rank": 6,
+          "team": "Netherlands",
+          "champion_pct": 9.62
+        },
+        {
+          "rank": 7,
+          "team": "Croatia",
+          "champion_pct": 5.33
+        },
+        {
+          "rank": 8,
+          "team": "Morocco",
+          "champion_pct": 4.55
+        }
+      ]
+    },
+    {
+      "stage": "post_qf",
+      "label": "Semi-finals",
+      "remaining_teams": 4,
+      "fixed_matches": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "r8",
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "champion": {
+        "team": "Argentina",
+        "rank_among_remaining": 1,
+        "champion_pct": 37.16
+      },
+      "remaining_top": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "champion_pct": 37.16
+        },
+        {
+          "rank": 2,
+          "team": "France",
+          "champion_pct": 33.1
+        },
+        {
+          "rank": 3,
+          "team": "Croatia",
+          "champion_pct": 16.5
+        },
+        {
+          "rank": 4,
+          "team": "Morocco",
+          "champion_pct": 13.24
+        }
+      ]
+    },
+    {
+      "stage": "post_sf",
+      "label": "Final",
+      "remaining_teams": 2,
+      "fixed_matches": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7",
+        "r8",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "s1",
+        "s2"
+      ],
+      "champion": {
+        "team": "Argentina",
+        "rank_among_remaining": 1,
+        "champion_pct": 53.44
+      },
+      "remaining_top": [
+        {
+          "rank": 1,
+          "team": "Argentina",
+          "champion_pct": 53.44
+        },
+        {
+          "rank": 2,
+          "team": "France",
+          "champion_pct": 46.56
+        }
+      ]
+    }
+  ],
+  "champion_rank_trajectory": [
+    2,
+    2,
+    1,
+    1
+  ],
+  "rank_trajectory_monotone": true,
+  "became_number_one_at": "Semi-finals",
+  "converged_before_final": true,
+  "honest_read": "Argentina (the actual 2022 champion) started #2 of 16 at 12.94% in the round-of-16 field, and became the model's #1 remaining pick by the semi-finals field (the field shrinks each round, so some of the rise is mechanical via elimination).",
+  "notes": {
+    "engine": "reuses the 32-team resolver in model.backtest_champion_odds (BRACKET, BacktestSampler, build_structure, tiebreakers, score_matrix); conditions on ACTUAL advancers per stage, re-simulates the remaining bracket",
+    "leakage_guard": "strengths fixed at the pre-opener fit (no in-tournament refit); each stage pins ONLY results up to that round (assert_no_future_leak); the final is never pinned",
+    "rank_definition": "the eventual champion's rank by champion-odds among the teams still alive after the stage's actual results (the remaining field)",
+    "narrowing_caveat": "the remaining field shrinks each round, so some of the rank rise is mechanical via elimination, not the model sharpening"
+  }
+}

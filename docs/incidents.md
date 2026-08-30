@@ -4,8 +4,11 @@ Things that were plausible and turned out to be wrong. Each entry names what was
 believable, how long it survived, and what finally caught it. The last of those is the useful part: a
 list of bugs teaches nothing, a list of what caught them teaches where to put the next check.
 
-Everything below is checkable inside this repository. Incidents from workstreams that are not
-published here are not described, because a claim you cannot check is not evidence.
+Everything below is checkable inside this repository, with ONE exception that says so in its own
+heading. Incidents from workstreams that are not published here are otherwise not described, because a
+claim you cannot check is not evidence. The exception is entry 8: it is included because the lesson is
+about a shape of guard that any repository can grow, and it is labelled rather than dressed up as
+something a reader here can verify.
 
 ---
 
@@ -146,3 +149,70 @@ disagree on magnitude, and on draws they disagree on sign. So the page quotes th
 which need no such choice, and says explicitly that draws are excluded from the directional claim
 because 81 of 104 observations fall in one of their three populated bins. See
 `docs/wc2026_postmortem.md`.
+
+---
+
+## 7. A proof that strips tags cannot see a link
+
+**Believed.** A rendered-output proof compares what a reader receives, so it will catch a page that
+changed.
+
+**Why that was believable.** It is the strongest check this project runs before a merge, and it is
+calibrated first: the same tree is built twice with different build ids and the two captures must be
+byte-identical before any comparison is trusted. On the change that prompted this entry it compared 28
+World Cup URLs and reported 27 identical, which was true.
+
+**What was actually true.** The normaliser strips tags and keeps visible text. An href is not visible
+text. When the site's routes were restructured and the World Cup home moved off the bare root, this
+file's last paragraph still read "The champion pick, the exact-final call and the AI vs humans bracket
+score are on the home retrospective", and its link still pointed at `/`. Same sentence, same rendering,
+different page at the other end. The proof reported no difference and was right about what it measured.
+
+**Trace in this repository.** `web/src/components/methodology/TournamentCalibrationSection.tsx`, the
+`home retrospective` link near the end of the component. In THIS repository that link is still correct,
+because this extract was taken from a tree where the World Cup surface owned the root; the file is here
+so the shape is visible, not because the defect is live in it.
+
+**What caught it.** An anchor crawl rather than a diff: load every route in every rendering state,
+collect every `a[href]`, and FETCH each distinct destination. It reads what the diff cannot, and it
+fails on a destination that no longer resolves or that resolves to something the page did not mean.
+
+**The lesson, and it is not "add another check".** A proof is only as wide as the thing it measures,
+and a proof over visible text is silent about everything a reader can click. The two are complementary
+and neither is a substitute: the diff catches copy that changed under an unchanged link, and the crawl
+catches a link that changed under unchanged copy.
+
+---
+
+## 8. A guard that enforced nothing, in a workstream that is not published here
+
+**LABELLED BECAUSE IT CANNOT BE CHECKED IN THIS REPOSITORY.** The guard and the surface it protects are
+not part of this extract. It is recorded because the shape is general and the shape is the useful part.
+
+**Believed.** A static guard existed, was committed, was maintained across several waves, was cited in
+briefs as the thing that enforced a standing rule, and was named in a report as the reason that rule
+held.
+
+**Why that was believable.** The file was real, its assertions were real, and running it by hand
+produced a verdict. Nothing about reading it suggests it was not running.
+
+**What was actually true.** The workflow's suite loop iterates `test/*.mjs` and skips a set of names by
+pattern. That guard's filename matched the skip pattern, because it shares a prefix with a group of
+suites that genuinely had to be excluded from that loop. No later step ran it by name. So the guard had
+never run in CI, on any branch, for its whole life. It was also failing, and had been failing on its
+own branch before the merge that brought it into view.
+
+**How long it survived.** From the wave that wrote it to the wave that ran the whole suite by hand,
+which was the first time anything enumerated what the loop actually executed rather than what it was
+believed to execute.
+
+**What caught it.** Running every suite in the directory and comparing that list against the list the
+workflow runs. Not reading the workflow, which is what had been done before and which is where the
+belief came from.
+
+**The lesson.** An exclusion by NAME PATTERN is a silent, growing hole: it excludes the files that
+matched when it was written and every file that happens to match later. A list of exclusions that names
+each file, or a floor asserting how many suites ran, turns the same decision into one that fails loudly
+when it stops being true. This repository's own workflow does the second thing, in
+`.github/workflows/ci.yml`: the publication gate is a NAMED step rather than a member of a glob, so
+nothing can quietly stop running it.

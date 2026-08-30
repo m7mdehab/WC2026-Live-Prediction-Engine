@@ -106,5 +106,51 @@ Those are the figures the methodology page renders as 0.546, 0.489, 58.3% and 78
 
 ## Verification transcript
 
-See the section below, which records an actual clean-checkout run rather than an assurance that one
-would work.
+Run 2026-08-30 against commit `15cdb4f`, from a `git clone` into an empty directory and a virtual
+environment created from nothing. Not a description of what should happen; the output of what did.
+
+```
+$ git clone <this repository> cleanroom && cd cleanroom
+$ python -m venv .venv && . .venv/Scripts/activate
+$ python -m pip install -r requirements.txt
+numpy==2.2.6
+pandas==2.3.3
+pytest==8.4.2
+scikit-learn==1.7.2
+scipy==1.15.3
+
+$ python -m pytest tools/test_publication_allowlist.py -q
+11 passed
+
+$ python -m pytest tests/ -q
+80 passed in 673.18s (0:11:13)
+```
+
+**The suite is slow, and that is the model doing real work rather than a hang.** Measured per module
+on this machine:
+
+```
+       131.41s  tests/test_backtest_retro.py::test_retrodiction_deterministic
+       105.83s  tests/test_champion_convergence.py::test_committed_artifact_matches[2022]
+       100.44s  tests/test_champion_convergence.py::test_committed_artifact_matches[2018]
+        75.73s  tests/test_backtest_retro.py::test_training_max_date_monotonic_and_strict
+        69.38s  tests/test_backtest_retro.py::test_static_vs_walkforward_differ
+```
+
+`test_champion_convergence.py` refits and re-simulates two past tournaments at every walk-forward
+stage; `test_projected_bracket.py` runs the bracket projection. Expect several minutes, 674s here. If you
+want a fast signal first, `python -m pytest tests/test_dixon_coles.py tests/test_elo.py
+tests/test_tiebreakers_order.py tests/test_backtest.py -q` covers the model, the ratings, the
+tie-break ordering and the leakage guard in under fifteen seconds.
+
+**The artifact comparison, run in the same clean checkout:**
+
+```
+omitted: []
+coverage: {'group_total': 72, 'group_covered_A': 72, 'group_covered_B': 72, 'ko_total': 32, 'ko_covered_B': 32}
+B_live_walkforward_group: n=72 brier=0.5457 log_loss=0.9201 top1=0.5833
+B_live_walkforward_ko: n=32 brier=0.4886 log_loss=0.8480 top1=0.7812
+```
+
+Those are the figures presaira.com/methodology renders as 0.546, 0.489, 58.3% and 78.1%, over 72 of 72
+and 32 of 32 matches with none omitted.

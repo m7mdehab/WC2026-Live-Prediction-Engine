@@ -163,8 +163,12 @@ once the group stage is mathematically complete, and `scripts/calibration_backte
 database client inside `_load_snapshot`, reached only from that script's `main()`. Both raise
 `ImportError` if called here. They are named rather than left to be discovered.
 
-Verified from a clean clone with a fresh virtual environment; the transcript is in
-[`docs/reproducing_a_published_number.md`](docs/reproducing_a_published_number.md).
+**80 passed in 11 minutes 13 seconds**, verified from a clean clone with a fresh virtual environment
+on 2026-08-30. The transcript, the per-module timings and a fifteen-second subset for a fast first
+signal are in
+[`docs/reproducing_a_published_number.md`](docs/reproducing_a_published_number.md). It is slow because
+`test_backtest_retro.py` and `test_champion_convergence.py` refit and re-simulate two past tournaments
+at every walk-forward stage, not because anything is stuck.
 
 To run the publication gate, which is what CI runs first:
 
